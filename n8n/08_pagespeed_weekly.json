@@ -1,0 +1,148 @@
+{
+  "name": "08 · Landing page mobile load time (Monday 07:00)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 7 * * 1"
+            }
+          ]
+        }
+      },
+      "id": "4be411fb-1ed0-5526-8b36-f2a55da59060",
+      "name": "Schedule",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return ['/career-program', '/trial-offer', '/workshop-signup'].map(page => ({ json: { page, url: 'https://alcovia.life' + page } }));"
+      },
+      "id": "855ce18d-775d-5230-818a-d5e65390362a",
+      "name": "Pages",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        240,
+        0
+      ],
+      "notes": "Visits and form submits per page come from site analytics into landing_page_daily; this flow adds load time",
+      "notesInFlow": true
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://www.googleapis.com/pagespeedonline/v5/runPagespeed",
+        "options": {},
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "url",
+              "value": "={{ $json.url }}"
+            },
+            {
+              "name": "strategy",
+              "value": "mobile"
+            },
+            {
+              "name": "key",
+              "value": "={{ $env.PAGESPEED_API_KEY }}"
+            }
+          ]
+        }
+      },
+      "id": "c57a7dcb-0cc6-5428-bb67-e2e99c5c633f",
+      "name": "PageSpeed (mobile)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        480,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "UPDATE alcovia.landing_page_daily SET mobile_load_s = round(($2::numeric / 1000), 2)\nWHERE page = $1 AND day >= current_date - 7",
+        "options": {
+          "queryReplacement": "={{ [$('Pages').item.json.page, $json.lighthouseResult.audits['largest-contentful-paint'].numericValue] }}"
+        }
+      },
+      "id": "788a8dd8-dbc5-5112-b14c-c874f17f9ff2",
+      "name": "Save load time",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        720,
+        0
+      ],
+      "credentials": {
+        "postgres": {
+          "id": "alcovia-postgres",
+          "name": "Alcovia Postgres"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Schedule": {
+      "main": [
+        [
+          {
+            "node": "Pages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pages": {
+      "main": [
+        [
+          {
+            "node": "PageSpeed (mobile)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PageSpeed (mobile)": {
+      "main": [
+        [
+          {
+            "node": "Save load time",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Asia/Kolkata",
+    "saveManualExecutions": true
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "tags": [
+    {
+      "name": "gtm"
+    },
+    {
+      "name": "landing-pages"
+    }
+  ]
+}

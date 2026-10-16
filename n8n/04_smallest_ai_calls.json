@@ -1,0 +1,153 @@
+{
+  "name": "04 · Smallest.ai reminder and renewal calls (every 15 min)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "*/15 9-20 * * *"
+            }
+          ]
+        }
+      },
+      "id": "214534ad-8147-5e01-ae4b-20a2dfc9db03",
+      "name": "Schedule",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "-- Discovery call reminders 24 h and 1 h before, and renewal calls 14 days before a trial ends.\nSELECT 'discovery_reminder_24h' AS kind, l.lead_id AS ref_id, l.parent_phone AS phone, l.parent_name AS name,\n       to_char(l.discovery_call_at AT TIME ZONE 'Asia/Kolkata', 'Dy DD Mon, HH12:MI AM') AS when_text\nFROM alcovia.leads l\nWHERE l.discovery_call_at BETWEEN now() + interval '23 hours 45 minutes' AND now() + interval '24 hours'\n  AND l.discovery_showed_at IS NULL AND l.dropped_at IS NULL AND l.parent_phone IS NOT NULL\n  AND NOT EXISTS (SELECT 1 FROM alcovia.outreach_log o WHERE o.kind = 'discovery_reminder_24h' AND o.ref_id = l.lead_id)\nUNION ALL\nSELECT 'discovery_reminder_1h', l.lead_id, l.parent_phone, l.parent_name,\n       to_char(l.discovery_call_at AT TIME ZONE 'Asia/Kolkata', 'HH12:MI AM')\nFROM alcovia.leads l\nWHERE l.discovery_call_at BETWEEN now() + interval '45 minutes' AND now() + interval '60 minutes'\n  AND l.discovery_showed_at IS NULL AND l.dropped_at IS NULL AND l.parent_phone IS NOT NULL\n  AND NOT EXISTS (SELECT 1 FROM alcovia.outreach_log o WHERE o.kind = 'discovery_reminder_1h' AND o.ref_id = l.lead_id)\nUNION ALL\nSELECT 'renewal_call', e.enrolment_id, s.parent_phone, s.name, to_char(e.end_on, 'DD Mon')\nFROM alcovia.enrolments e JOIN alcovia.students s USING (student_id)\nWHERE e.plan = 'trial' AND NOT e.renewed AND e.end_on = current_date + 14 AND s.parent_phone IS NOT NULL\n  AND NOT EXISTS (SELECT 1 FROM alcovia.outreach_log o WHERE o.kind = 'renewal_call' AND o.ref_id = e.enrolment_id)",
+        "options": {}
+      },
+      "id": "e1d8c3b9-5e57-5b2a-9f68-6e11025ab42a",
+      "name": "Calls due now",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        240,
+        0
+      ],
+      "credentials": {
+        "postgres": {
+          "id": "alcovia-postgres",
+          "name": "Alcovia Postgres"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.SMALLEST_OUTBOUND_URL }}",
+        "options": {},
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ agentId: $json.kind === 'renewal_call' ? $env.SMALLEST_RENEWAL_AGENT_ID : $env.SMALLEST_REMINDER_AGENT_ID, phoneNumber: $json.phone, variables: { name: $json.name, when: $json.when_text } }) }}"
+      },
+      "id": "fea53528-ee5b-53a6-8dbc-f800a7f822d2",
+      "name": "Place call",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        480,
+        0
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "smallest",
+          "name": "Smallest.ai"
+        }
+      },
+      "notes": "Outbound-call endpoint and agent ids from the Smallest.ai Atoms dashboard (set as env vars)",
+      "notesInFlow": true
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO alcovia.outreach_log (kind, ref_id, channel, provider_ref) VALUES ($1, $2, 'smallest_ai', nullif($3, ''))",
+        "options": {
+          "queryReplacement": "={{ [$('Calls due now').item.json.kind, $('Calls due now').item.json.ref_id, $json.id ?? ''] }}"
+        }
+      },
+      "id": "b85cb7b0-354e-52c3-991b-3159ebf9f533",
+      "name": "Log call",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        720,
+        0
+      ],
+      "credentials": {
+        "postgres": {
+          "id": "alcovia-postgres",
+          "name": "Alcovia Postgres"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Schedule": {
+      "main": [
+        [
+          {
+            "node": "Calls due now",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calls due now": {
+      "main": [
+        [
+          {
+            "node": "Place call",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Place call": {
+      "main": [
+        [
+          {
+            "node": "Log call",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Asia/Kolkata",
+    "saveManualExecutions": true
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "tags": [
+    {
+      "name": "gtm"
+    },
+    {
+      "name": "funnel"
+    },
+    {
+      "name": "renewals"
+    }
+  ]
+}

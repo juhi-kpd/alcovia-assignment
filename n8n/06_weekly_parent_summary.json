@@ -1,0 +1,172 @@
+{
+  "name": "06 · Weekly parent summary on WhatsApp (Sunday 18:00)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 18 * * 0"
+            }
+          ]
+        }
+      },
+      "id": "9c57c1ba-3b88-50c8-970e-3a8717a99234",
+      "name": "Schedule",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT s.student_id, s.name, s.parent_phone,\n  coalesce((SELECT sum(actual_min) FROM alcovia.focus_sessions f WHERE f.student_id = s.student_id AND f.started_at > now() - interval '7 days'), 0) AS focus_min,\n  (SELECT round(avg(correct) * 10) FROM alcovia.quiz_attempts q WHERE q.student_id = s.student_id AND q.quiz_date > current_date - 7) AS quiz_pct,\n  (SELECT count(*) FROM alcovia.chapter_stages cs JOIN alcovia.chapters c USING (chapter_id) JOIN alcovia.subjects sb USING (subject_id)\n    WHERE sb.student_id = s.student_id AND cs.reached_on > current_date - 7) AS chapter_steps,\n  (SELECT count(*) FILTER (WHERE p.attended) || ' of ' || count(*) FROM alcovia.activity_participants p JOIN alcovia.activities a USING (activity_id)\n    WHERE p.student_id = s.student_id AND a.held AND a.scheduled_on > current_date - 7) AS sessions\nFROM alcovia.students s\nWHERE s.parent_phone IS NOT NULL",
+        "options": {}
+      },
+      "id": "c32bede0-738c-53ce-8e04-639e36ef2fab",
+      "name": "Week per student",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        240,
+        0
+      ],
+      "credentials": {
+        "postgres": {
+          "id": "alcovia-postgres",
+          "name": "Alcovia Postgres"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Three numbers and one line, so a parent can read it in ten seconds.\nreturn $input.all().map(({ json: s }) => ({ json: { ...s, text:\n  `${s.name.split(' ')[0]}'s week: ${s.focus_min} focus minutes, ${s.chapter_steps} chapter steps completed, ` +\n  `${s.sessions} sessions attended` + (s.quiz_pct != null ? `, quiz average ${s.quiz_pct}%.` : '.') }}));"
+      },
+      "id": "3ef1e6e7-efc4-52db-a374-be9813cf7ceb",
+      "name": "Write message",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        480,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.facebook.com/v21.0/{{ $env.WHATSAPP_PHONE_NUMBER_ID }}/messages",
+        "options": {},
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ messaging_product: 'whatsapp', to: $json.parent_phone, type: 'template', template: { name: 'parent_weekly_summary', language: { code: 'en' }, components: [{ type: 'body', parameters: [{ type: 'text', text: $json.text }] }] } }) }}"
+      },
+      "id": "80557199-2b04-5b82-9148-73a37133ce35",
+      "name": "WhatsApp parent",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        720,
+        0
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "whatsapp",
+          "name": "WhatsApp Cloud API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO alcovia.outreach_log (kind, ref_id, channel, provider_ref) VALUES ('parent_summary', $1, 'whatsapp', nullif($2, ''))",
+        "options": {
+          "queryReplacement": "={{ [$('Write message').item.json.student_id, $json.messages?.[0]?.id ?? ''] }}"
+        }
+      },
+      "id": "525d496a-a7df-5fd6-b8d0-7f37bb193ac6",
+      "name": "Log message",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        960,
+        0
+      ],
+      "credentials": {
+        "postgres": {
+          "id": "alcovia-postgres",
+          "name": "Alcovia Postgres"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Schedule": {
+      "main": [
+        [
+          {
+            "node": "Week per student",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Week per student": {
+      "main": [
+        [
+          {
+            "node": "Write message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Write message": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp parent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp parent": {
+      "main": [
+        [
+          {
+            "node": "Log message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Asia/Kolkata",
+    "saveManualExecutions": true
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "tags": [
+    {
+      "name": "students"
+    },
+    {
+      "name": "parents"
+    }
+  ]
+}

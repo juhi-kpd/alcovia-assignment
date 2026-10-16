@@ -1,0 +1,236 @@
+{
+  "name": "07 · WHOOP recovery and sleep → wearable_daily (daily 07:00)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 7 * * *"
+            }
+          ]
+        }
+      },
+      "id": "62f13eef-af61-5d3f-bf0a-0d0e95fa9c07",
+      "name": "Schedule",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT student_id, access_token FROM alcovia.wearable_tokens WHERE provider = 'whoop' AND expires_at > now()",
+        "options": {}
+      },
+      "id": "3b2d17bf-f15b-5cb0-a4b0-a25a487a0398",
+      "name": "Connected students",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        240,
+        0
+      ],
+      "credentials": {
+        "postgres": {
+          "id": "alcovia-postgres",
+          "name": "Alcovia Postgres"
+        }
+      },
+      "notes": "Token refresh runs in a separate small workflow; expired tokens are skipped",
+      "notesInFlow": true
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://api.prod.whoop.com/developer/v2/recovery",
+        "options": {},
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "start",
+              "value": "={{ $now.minus({ days: 1 }).startOf('day').toISO() }}"
+            },
+            {
+              "name": "limit",
+              "value": "1"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('Connected students').item.json.access_token }}"
+            }
+          ]
+        }
+      },
+      "id": "531a01ae-3bd6-5dd3-94ae-6954318f912f",
+      "name": "Get recovery",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        480,
+        -80
+      ],
+      "notes": "Authorization: Bearer {{ access_token }} (set as header below)",
+      "notesInFlow": true
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://api.prod.whoop.com/developer/v2/activity/sleep",
+        "options": {},
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "start",
+              "value": "={{ $now.minus({ days: 1 }).startOf('day').toISO() }}"
+            },
+            {
+              "name": "limit",
+              "value": "1"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('Connected students').item.json.access_token }}"
+            }
+          ]
+        }
+      },
+      "id": "496f8bca-d0b1-533c-982e-2112c5163623",
+      "name": "Get sleep",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        720,
+        -80
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Pair each student's recovery and sleep responses (same item order as 'Connected students').\nconst students = $('Connected students').all(), rec = $('Get recovery').all(), sleep = $('Get sleep').all();\nreturn students.map((s, i) => {\n  const r = rec[i]?.json.records?.[0]?.score, sl = sleep[i]?.json.records?.[0]?.score?.stage_summary;\n  const asleepMs = sl ? sl.total_in_bed_time_milli - sl.total_awake_time_milli : null;\n  return { json: { student_id: s.json.student_id, day: $now.minus({ days: 1 }).toISODate(),\n    recovery_pct: r?.recovery_score ?? '', sleep_hours: asleepMs ? (asleepMs / 3.6e6).toFixed(2) : '' } };\n});"
+      },
+      "id": "eeac4040-882a-5721-b854-9eb2f7623309",
+      "name": "Shape row",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        960,
+        -80
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO alcovia.wearable_daily (student_id, day, source, sleep_hours, recovery_pct)\nVALUES ($1, $2::date, 'whoop', nullif($3, '')::numeric, nullif($4, '')::numeric::int)\nON CONFLICT (student_id, day) DO UPDATE SET sleep_hours = EXCLUDED.sleep_hours, recovery_pct = EXCLUDED.recovery_pct, source = 'whoop'",
+        "options": {
+          "queryReplacement": "={{ [$json.student_id, $json.day, $json.sleep_hours, $json.recovery_pct] }}"
+        }
+      },
+      "id": "7d58560e-7a7d-5c0f-95c1-ca912ef9c7e9",
+      "name": "Upsert wearable_daily",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        1200,
+        -80
+      ],
+      "credentials": {
+        "postgres": {
+          "id": "alcovia-postgres",
+          "name": "Alcovia Postgres"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Schedule": {
+      "main": [
+        [
+          {
+            "node": "Connected students",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Connected students": {
+      "main": [
+        [
+          {
+            "node": "Get recovery",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get recovery": {
+      "main": [
+        [
+          {
+            "node": "Get sleep",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get sleep": {
+      "main": [
+        [
+          {
+            "node": "Shape row",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Shape row": {
+      "main": [
+        [
+          {
+            "node": "Upsert wearable_daily",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Asia/Kolkata",
+    "saveManualExecutions": true
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "tags": [
+    {
+      "name": "students"
+    },
+    {
+      "name": "wearables"
+    }
+  ]
+}

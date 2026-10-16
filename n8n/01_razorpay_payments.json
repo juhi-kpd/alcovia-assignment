@@ -1,0 +1,137 @@
+{
+  "name": "01 · Razorpay → payments and invoices",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "razorpay",
+        "responseMode": "onReceived",
+        "options": {
+          "rawBody": true
+        }
+      },
+      "id": "b5e69739-a643-5e71-b006-6026972fa5e8",
+      "name": "Razorpay webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "notes": "Razorpay Dashboard → Webhooks → events payment.captured and invoice.paid",
+      "notesInFlow": true
+    },
+    {
+      "parameters": {
+        "jsCode": "// Razorpay signs the raw body with the webhook secret (HMAC-SHA256, header x-razorpay-signature).\n// Needs NODE_FUNCTION_ALLOW_BUILTIN=crypto on the n8n instance.\nconst crypto = require('crypto');\nconst out = [];\nfor (const item of $input.all()) {\n  const raw = item.binary?.data ? Buffer.from(item.binary.data.data, 'base64').toString() : JSON.stringify(item.json.body);\n  const sig = crypto.createHmac('sha256', $env.RAZORPAY_WEBHOOK_SECRET).update(raw).digest('hex');\n  if (sig !== item.json.headers['x-razorpay-signature']) throw new Error('Bad Razorpay signature');\n  const ev = item.json.body;\n  if (ev.event === 'payment.captured') {\n    const p = ev.payload.payment.entity, notes = p.notes || {};\n    out.push({ json: {\n      payment_id: p.id,\n      product: notes.product,                       // 'trial' | 'full' | 'workshop', set on the payment link\n      invoice_id: p.invoice_id || '',\n      workshop_id: notes.workshop_id || '',\n      student_id: notes.student_id || '',\n      utm_creative_id: notes.utm_content || '',     // Meta ad id carried from the ad's UTM\n      amount_inr: p.amount / 100,\n      paid_at: new Date(p.created_at * 1000).toISOString(),\n    }});\n  } else if (ev.event === 'invoice.paid') {\n    const inv = ev.payload.invoice.entity;\n    out.push({ json: { payment_id: inv.payment_id, product: inv.notes?.product || 'full', invoice_id: inv.id,\n      workshop_id: '', student_id: inv.notes?.student_id || '', utm_creative_id: '',\n      amount_inr: inv.amount_paid / 100, paid_at: new Date(inv.paid_at * 1000).toISOString() }});\n  }\n}\nreturn out;"
+      },
+      "id": "3a5b4f6b-8f9b-598d-861e-7fa67d8bf8ec",
+      "name": "Verify signature and map",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        260,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO alcovia.payments (payment_id, product, invoice_id, workshop_id, student_id, utm_creative_id, amount_inr, paid_at)\nVALUES ($1, $2, nullif($3, ''), nullif($4, ''), nullif($5, ''), nullif($6, ''), $7::numeric, $8::timestamptz)\nON CONFLICT (payment_id) DO NOTHING",
+        "options": {
+          "queryReplacement": "={{ [$json.payment_id, $json.product, $json.invoice_id, $json.workshop_id, $json.student_id, $json.utm_creative_id, $json.amount_inr, $json.paid_at] }}"
+        }
+      },
+      "id": "65fc7d7c-a694-56be-9028-9c16cab876cd",
+      "name": "Insert payment",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        520,
+        0
+      ],
+      "credentials": {
+        "postgres": {
+          "id": "alcovia-postgres",
+          "name": "Alcovia Postgres"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "UPDATE alcovia.invoices SET paid_on = ($2::timestamptz AT TIME ZONE 'Asia/Kolkata')::date\nWHERE invoice_id = $1 AND paid_on IS NULL",
+        "options": {
+          "queryReplacement": "={{ [$('Verify signature and map').item.json.invoice_id, $('Verify signature and map').item.json.paid_at] }}"
+        }
+      },
+      "id": "dafd15a7-209e-5605-8942-4f62b4c5fff1",
+      "name": "Mark invoice paid",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        780,
+        0
+      ],
+      "credentials": {
+        "postgres": {
+          "id": "alcovia-postgres",
+          "name": "Alcovia Postgres"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Razorpay webhook": {
+      "main": [
+        [
+          {
+            "node": "Verify signature and map",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verify signature and map": {
+      "main": [
+        [
+          {
+            "node": "Insert payment",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Insert payment": {
+      "main": [
+        [
+          {
+            "node": "Mark invoice paid",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Asia/Kolkata",
+    "saveManualExecutions": true
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "tags": [
+    {
+      "name": "gtm"
+    },
+    {
+      "name": "revenue"
+    }
+  ]
+}

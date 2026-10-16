@@ -1,0 +1,234 @@
+{
+  "name": "02 · Meta Ads insights → ad_daily (daily 06:00)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 6 * * *"
+            }
+          ]
+        }
+      },
+      "id": "93abe2ab-c7c6-5aa9-9b3d-cf93b91d6694",
+      "name": "Schedule",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://graph.facebook.com/v21.0/act_{{ $env.META_AD_ACCOUNT_ID }}/insights",
+        "options": {},
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "level",
+              "value": "ad"
+            },
+            {
+              "name": "date_preset",
+              "value": "yesterday"
+            },
+            {
+              "name": "time_increment",
+              "value": "1"
+            },
+            {
+              "name": "limit",
+              "value": "500"
+            },
+            {
+              "name": "fields",
+              "value": "ad_id,ad_name,campaign_id,campaign_name,spend,impressions,reach,inline_link_clicks,date_start"
+            }
+          ]
+        }
+      },
+      "id": "2b221916-bc1c-58b0-80d8-034769633b2c",
+      "name": "Get yesterday's ad insights",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        240,
+        0
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "meta-api",
+          "name": "Meta Marketing API"
+        }
+      },
+      "notes": "Header auth: Authorization: Bearer <system user token> with ads_read",
+      "notesInFlow": true
+    },
+    {
+      "parameters": {
+        "jsCode": "// One output item per ad. Campaign objective comes from the naming convention \"Program · …\" / \"Workshop · …\".\nreturn $input.first().json.data.map(r => ({ json: {\n  campaign_id: r.campaign_id,\n  campaign_name: r.campaign_name,\n  objective: /^workshop/i.test(r.campaign_name) ? 'workshop' : 'program',\n  creative_id: r.ad_id,\n  creative_name: r.ad_name,\n  day: r.date_start,\n  spend_inr: Number(r.spend || 0),\n  impressions: Number(r.impressions || 0),\n  reach: Number(r.reach || 0),\n  link_clicks: Number(r.inline_link_clicks || 0),\n}}));"
+      },
+      "id": "053ed987-289d-50aa-a9f3-87f5e2715ef5",
+      "name": "Flatten rows",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        480,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO alcovia.campaigns (campaign_id, name, objective) VALUES ($1, $2, $3)\nON CONFLICT (campaign_id) DO UPDATE SET name = EXCLUDED.name",
+        "options": {
+          "queryReplacement": "={{ [$json.campaign_id, $json.campaign_name, $json.objective] }}"
+        }
+      },
+      "id": "4ae36287-b73a-546f-a81a-039646b420a2",
+      "name": "Upsert campaign",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        720,
+        0
+      ],
+      "credentials": {
+        "postgres": {
+          "id": "alcovia-postgres",
+          "name": "Alcovia Postgres"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO alcovia.creatives (creative_id, campaign_id, name, format, landing_page)\nVALUES ($1, $2, $3, 'static', '/career-program')\nON CONFLICT (creative_id) DO UPDATE SET name = EXCLUDED.name",
+        "options": {
+          "queryReplacement": "={{ [$('Flatten rows').item.json.creative_id, $('Flatten rows').item.json.campaign_id, $('Flatten rows').item.json.creative_name] }}"
+        }
+      },
+      "id": "3ee2a148-aa20-5167-b0d9-2d31468828b0",
+      "name": "Upsert creative",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        960,
+        0
+      ],
+      "credentials": {
+        "postgres": {
+          "id": "alcovia-postgres",
+          "name": "Alcovia Postgres"
+        }
+      },
+      "notes": "Format and landing page default here; correct them once per new ad in the creatives table",
+      "notesInFlow": true
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO alcovia.ad_daily (creative_id, day, spend_inr, impressions, reach, link_clicks)\nVALUES ($1, $2::date, $3::numeric, $4::int, $5::int, $6::int)\nON CONFLICT (creative_id, day) DO UPDATE\nSET spend_inr = EXCLUDED.spend_inr, impressions = EXCLUDED.impressions, reach = EXCLUDED.reach, link_clicks = EXCLUDED.link_clicks",
+        "options": {
+          "queryReplacement": "={{ [$('Flatten rows').item.json.creative_id, $('Flatten rows').item.json.day, $('Flatten rows').item.json.spend_inr, $('Flatten rows').item.json.impressions, $('Flatten rows').item.json.reach, $('Flatten rows').item.json.link_clicks] }}"
+        }
+      },
+      "id": "077aa844-a222-5551-8b8b-4d748a91d402",
+      "name": "Upsert ad_daily",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        1200,
+        0
+      ],
+      "credentials": {
+        "postgres": {
+          "id": "alcovia-postgres",
+          "name": "Alcovia Postgres"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Schedule": {
+      "main": [
+        [
+          {
+            "node": "Get yesterday's ad insights",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get yesterday's ad insights": {
+      "main": [
+        [
+          {
+            "node": "Flatten rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Flatten rows": {
+      "main": [
+        [
+          {
+            "node": "Upsert campaign",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upsert campaign": {
+      "main": [
+        [
+          {
+            "node": "Upsert creative",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upsert creative": {
+      "main": [
+        [
+          {
+            "node": "Upsert ad_daily",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Asia/Kolkata",
+    "saveManualExecutions": true
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "tags": [
+    {
+      "name": "gtm"
+    },
+    {
+      "name": "campaigns"
+    }
+  ]
+}

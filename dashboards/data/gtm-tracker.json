@@ -1,0 +1,5562 @@
+{
+ "generated": "2026-10-16",
+ "months": [
+  "2026-05",
+  "2026-06",
+  "2026-07",
+  "2026-08",
+  "2026-09",
+  "2026-10"
+ ],
+ "ranges": {
+  "0-0": {
+   "from": "2026-05-01",
+   "to": "2026-05-31",
+   "revenue": [
+    {
+     "month": "2026-05-01",
+     "full_program_inr": 180000.0,
+     "trial_inr": 90000.0,
+     "workshop_inr": 135966.0,
+     "total_inr": 405966.0,
+     "target_inr": 500000.0,
+     "pct_of_target": 81.2,
+     "trial_signups": 2,
+     "full_signups": 1,
+     "workshop_seats": 34,
+     "program_share_pct": 66.5
+    }
+   ],
+   "unpaid": [],
+   "funnel": [
+    {
+     "n": 1,
+     "stage": "Total leads",
+     "leads": 158,
+     "step_pct": null,
+     "of_all_leads_pct": 100.0
+    },
+    {
+     "n": 2,
+     "stage": "Qualified",
+     "leads": 48,
+     "step_pct": 30.4,
+     "of_all_leads_pct": 30.4
+    },
+    {
+     "n": 3,
+     "stage": "Discovery call set",
+     "leads": 27,
+     "step_pct": 56.3,
+     "of_all_leads_pct": 17.1
+    },
+    {
+     "n": 4,
+     "stage": "Showed up to call",
+     "leads": 19,
+     "step_pct": 70.4,
+     "of_all_leads_pct": 12.0
+    },
+    {
+     "n": 5,
+     "stage": "Ambition interview",
+     "leads": 14,
+     "step_pct": 73.7,
+     "of_all_leads_pct": 8.9
+    },
+    {
+     "n": 6,
+     "stage": "Architect session",
+     "leads": 8,
+     "step_pct": 57.1,
+     "of_all_leads_pct": 5.1
+    },
+    {
+     "n": 7,
+     "stage": "Paid sign-up",
+     "leads": 3,
+     "step_pct": 37.5,
+     "of_all_leads_pct": 1.9
+    }
+   ],
+   "funnel_kpis": [
+    {
+     "cost_per_qualified_lead_inr": 2500,
+     "program_conversion_pct": 1.9,
+     "organic_leads": 18,
+     "avg_days_to_pay": 17.7,
+     "avg_days_to_drop": 9.0
+    }
+   ],
+   "creatives": [
+    {
+     "name": "Reel: workshop highlights",
+     "objective": "workshop",
+     "spend_inr": 16500,
+     "ctr_pct": 2.1,
+     "frequency": 1.3,
+     "results": 21,
+     "cost_per_result": 786,
+     "target": 800,
+     "action": "scale"
+    },
+    {
+     "name": "Reel: \"What will you be at 25?\"",
+     "objective": "program",
+     "spend_inr": 36000,
+     "ctr_pct": 1.9,
+     "frequency": 1.4,
+     "results": 19,
+     "cost_per_result": 1895,
+     "target": 2500,
+     "action": "scale"
+    },
+    {
+     "name": "Carousel: a day as an Alcovian",
+     "objective": "program",
+     "spend_inr": 26400,
+     "ctr_pct": 1.5,
+     "frequency": 1.6,
+     "results": 10,
+     "cost_per_result": 2640,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Parent testimonial video",
+     "objective": "program",
+     "spend_inr": 24000,
+     "ctr_pct": 1.4,
+     "frequency": 1.8,
+     "results": 6,
+     "cost_per_result": 4000,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Static: 3-month trial offer",
+     "objective": "program",
+     "spend_inr": 14400,
+     "ctr_pct": 1.2,
+     "frequency": 1.2,
+     "results": 6,
+     "cost_per_result": 2400,
+     "target": 2500,
+     "action": "scale"
+    },
+    {
+     "name": "Static: guest speaker poster",
+     "objective": "workshop",
+     "spend_inr": 13500,
+     "ctr_pct": 1.1,
+     "frequency": 1.9,
+     "results": 13,
+     "cost_per_result": 1038,
+     "target": 800,
+     "action": "hold"
+    },
+    {
+     "name": "Static: \"Top 1% students\" banner",
+     "objective": "program",
+     "spend_inr": 19200,
+     "ctr_pct": 0.8,
+     "frequency": 1.5,
+     "results": 1,
+     "cost_per_result": 19200,
+     "target": 2500,
+     "action": "drop"
+    }
+   ],
+   "pages": [
+    {
+     "page": "/workshop-signup",
+     "visits": 1650,
+     "drop_off_pct": 48.8,
+     "latest_mobile_load_s": 1.7,
+     "health": "healthy"
+    },
+    {
+     "page": "/career-program",
+     "visits": 1050,
+     "drop_off_pct": 58.7,
+     "latest_mobile_load_s": 2.1,
+     "health": "healthy"
+    },
+    {
+     "page": "/trial-offer",
+     "visits": 300,
+     "drop_off_pct": 69.0,
+     "latest_mobile_load_s": 2.6,
+     "health": "high drop-off"
+    }
+   ],
+   "drop_stages": [
+    {
+     "last_stage_reached": "lead",
+     "dropped": 110,
+     "avg_days_in_funnel": 6.7
+    },
+    {
+     "last_stage_reached": "qualified",
+     "dropped": 21,
+     "avg_days_in_funnel": 9.4
+    },
+    {
+     "last_stage_reached": "discovery_set",
+     "dropped": 8,
+     "avg_days_in_funnel": 15.6
+    },
+    {
+     "last_stage_reached": "ambition_done",
+     "dropped": 6,
+     "avg_days_in_funnel": 22.0
+    },
+    {
+     "last_stage_reached": "architect_done",
+     "dropped": 5,
+     "avg_days_in_funnel": 25.2
+    },
+    {
+     "last_stage_reached": "discovery_showed",
+     "dropped": 5,
+     "avg_days_in_funnel": 15.5
+    }
+   ]
+  },
+  "0-1": {
+   "from": "2026-05-01",
+   "to": "2026-06-30",
+   "revenue": [
+    {
+     "month": "2026-05-01",
+     "full_program_inr": 180000.0,
+     "trial_inr": 90000.0,
+     "workshop_inr": 135966.0,
+     "total_inr": 405966.0,
+     "target_inr": 500000.0,
+     "pct_of_target": 81.2,
+     "trial_signups": 2,
+     "full_signups": 1,
+     "workshop_seats": 34,
+     "program_share_pct": 66.5
+    },
+    {
+     "month": "2026-06-01",
+     "full_program_inr": 180000.0,
+     "trial_inr": 135000.0,
+     "workshop_inr": 163959.0,
+     "total_inr": 478959.0,
+     "target_inr": 550000.0,
+     "pct_of_target": 87.1,
+     "trial_signups": 3,
+     "full_signups": 1,
+     "workshop_seats": 41,
+     "program_share_pct": 65.8
+    }
+   ],
+   "unpaid": [],
+   "funnel": [
+    {
+     "n": 1,
+     "stage": "Total leads",
+     "leads": 333,
+     "step_pct": null,
+     "of_all_leads_pct": 100.0
+    },
+    {
+     "n": 2,
+     "stage": "Qualified",
+     "leads": 102,
+     "step_pct": 30.6,
+     "of_all_leads_pct": 30.6
+    },
+    {
+     "n": 3,
+     "stage": "Discovery call set",
+     "leads": 57,
+     "step_pct": 55.9,
+     "of_all_leads_pct": 17.1
+    },
+    {
+     "n": 4,
+     "stage": "Showed up to call",
+     "leads": 41,
+     "step_pct": 71.9,
+     "of_all_leads_pct": 12.3
+    },
+    {
+     "n": 5,
+     "stage": "Ambition interview",
+     "leads": 30,
+     "step_pct": 73.2,
+     "of_all_leads_pct": 9.0
+    },
+    {
+     "n": 6,
+     "stage": "Architect session",
+     "leads": 17,
+     "step_pct": 56.7,
+     "of_all_leads_pct": 5.1
+    },
+    {
+     "n": 7,
+     "stage": "Paid sign-up",
+     "leads": 7,
+     "step_pct": 41.2,
+     "of_all_leads_pct": 2.1
+    }
+   ],
+   "funnel_kpis": [
+    {
+     "cost_per_qualified_lead_inr": 2451,
+     "program_conversion_pct": 2.1,
+     "organic_leads": 38,
+     "avg_days_to_pay": 17.9,
+     "avg_days_to_drop": 8.8
+    }
+   ],
+   "creatives": [
+    {
+     "name": "Reel: workshop highlights",
+     "objective": "workshop",
+     "spend_inr": 34100,
+     "ctr_pct": 2.1,
+     "frequency": 1.5,
+     "results": 47,
+     "cost_per_result": 726,
+     "target": 800,
+     "action": "scale"
+    },
+    {
+     "name": "Reel: \"What will you be at 25?\"",
+     "objective": "program",
+     "spend_inr": 75000,
+     "ctr_pct": 1.9,
+     "frequency": 1.6,
+     "results": 33,
+     "cost_per_result": 2273,
+     "target": 2500,
+     "action": "scale"
+    },
+    {
+     "name": "Carousel: a day as an Alcovian",
+     "objective": "program",
+     "spend_inr": 55000,
+     "ctr_pct": 1.5,
+     "frequency": 1.9,
+     "results": 22,
+     "cost_per_result": 2500,
+     "target": 2500,
+     "action": "scale"
+    },
+    {
+     "name": "Parent testimonial video",
+     "objective": "program",
+     "spend_inr": 50000,
+     "ctr_pct": 1.35,
+     "frequency": 2.3,
+     "results": 21,
+     "cost_per_result": 2381,
+     "target": 2500,
+     "action": "scale"
+    },
+    {
+     "name": "Static: 3-month trial offer",
+     "objective": "program",
+     "spend_inr": 30000,
+     "ctr_pct": 1.2,
+     "frequency": 1.4,
+     "results": 8,
+     "cost_per_result": 3750,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Static: guest speaker poster",
+     "objective": "workshop",
+     "spend_inr": 27900,
+     "ctr_pct": 1.05,
+     "frequency": 2.4,
+     "results": 28,
+     "cost_per_result": 996,
+     "target": 800,
+     "action": "hold"
+    },
+    {
+     "name": "Static: \"Top 1% students\" banner",
+     "objective": "program",
+     "spend_inr": 40000,
+     "ctr_pct": 0.8,
+     "frequency": 1.8,
+     "results": 5,
+     "cost_per_result": 8000,
+     "target": 2500,
+     "action": "drop"
+    }
+   ],
+   "pages": [
+    {
+     "page": "/workshop-signup",
+     "visits": 3440,
+     "drop_off_pct": 48.4,
+     "latest_mobile_load_s": 1.8,
+     "health": "healthy"
+    },
+    {
+     "page": "/career-program",
+     "visits": 2210,
+     "drop_off_pct": 58.6,
+     "latest_mobile_load_s": 2.1,
+     "health": "healthy"
+    },
+    {
+     "page": "/trial-offer",
+     "visits": 630,
+     "drop_off_pct": 66.2,
+     "latest_mobile_load_s": 2.7,
+     "health": "high drop-off"
+    }
+   ],
+   "drop_stages": [
+    {
+     "last_stage_reached": "lead",
+     "dropped": 231,
+     "avg_days_in_funnel": 6.5
+    },
+    {
+     "last_stage_reached": "qualified",
+     "dropped": 45,
+     "avg_days_in_funnel": 9.5
+    },
+    {
+     "last_stage_reached": "discovery_set",
+     "dropped": 16,
+     "avg_days_in_funnel": 14.1
+    },
+    {
+     "last_stage_reached": "ambition_done",
+     "dropped": 13,
+     "avg_days_in_funnel": 20.8
+    },
+    {
+     "last_stage_reached": "discovery_showed",
+     "dropped": 11,
+     "avg_days_in_funnel": 16.7
+    },
+    {
+     "last_stage_reached": "architect_done",
+     "dropped": 10,
+     "avg_days_in_funnel": 24.2
+    }
+   ]
+  },
+  "0-2": {
+   "from": "2026-05-01",
+   "to": "2026-07-31",
+   "revenue": [
+    {
+     "month": "2026-05-01",
+     "full_program_inr": 180000.0,
+     "trial_inr": 90000.0,
+     "workshop_inr": 135966.0,
+     "total_inr": 405966.0,
+     "target_inr": 500000.0,
+     "pct_of_target": 81.2,
+     "trial_signups": 2,
+     "full_signups": 1,
+     "workshop_seats": 34,
+     "program_share_pct": 66.5
+    },
+    {
+     "month": "2026-06-01",
+     "full_program_inr": 180000.0,
+     "trial_inr": 135000.0,
+     "workshop_inr": 163959.0,
+     "total_inr": 478959.0,
+     "target_inr": 550000.0,
+     "pct_of_target": 87.1,
+     "trial_signups": 3,
+     "full_signups": 1,
+     "workshop_seats": 41,
+     "program_share_pct": 65.8
+    },
+    {
+     "month": "2026-07-01",
+     "full_program_inr": 360000.0,
+     "trial_inr": 135000.0,
+     "workshop_inr": 151962.0,
+     "total_inr": 646962.0,
+     "target_inr": 650000.0,
+     "pct_of_target": 99.5,
+     "trial_signups": 3,
+     "full_signups": 2,
+     "workshop_seats": 38,
+     "program_share_pct": 76.5
+    }
+   ],
+   "unpaid": [
+    {
+     "invoice_id": "INV-0412",
+     "billed_to": "Parent of Aarav S.",
+     "product": "full",
+     "amount_inr": 180000.0,
+     "issued_on": "2026-07-28",
+     "due_on": "2026-08-04",
+     "days_overdue": 73,
+     "status": "critical"
+    }
+   ],
+   "funnel": [
+    {
+     "n": 1,
+     "stage": "Total leads",
+     "leads": 525,
+     "step_pct": null,
+     "of_all_leads_pct": 100.0
+    },
+    {
+     "n": 2,
+     "stage": "Qualified",
+     "leads": 162,
+     "step_pct": 30.9,
+     "of_all_leads_pct": 30.9
+    },
+    {
+     "n": 3,
+     "stage": "Discovery call set",
+     "leads": 91,
+     "step_pct": 56.2,
+     "of_all_leads_pct": 17.3
+    },
+    {
+     "n": 4,
+     "stage": "Showed up to call",
+     "leads": 66,
+     "step_pct": 72.5,
+     "of_all_leads_pct": 12.6
+    },
+    {
+     "n": 5,
+     "stage": "Ambition interview",
+     "leads": 48,
+     "step_pct": 72.7,
+     "of_all_leads_pct": 9.1
+    },
+    {
+     "n": 6,
+     "stage": "Architect session",
+     "leads": 28,
+     "step_pct": 58.3,
+     "of_all_leads_pct": 5.3
+    },
+    {
+     "n": 7,
+     "stage": "Paid sign-up",
+     "leads": 12,
+     "step_pct": 42.9,
+     "of_all_leads_pct": 2.3
+    }
+   ],
+   "funnel_kpis": [
+    {
+     "cost_per_qualified_lead_inr": 2407,
+     "program_conversion_pct": 2.29,
+     "organic_leads": 60,
+     "avg_days_to_pay": 18.4,
+     "avg_days_to_drop": 8.7
+    }
+   ],
+   "creatives": [
+    {
+     "name": "Reel: workshop highlights",
+     "objective": "workshop",
+     "spend_inr": 51150,
+     "ctr_pct": 2.07,
+     "frequency": 1.6,
+     "results": 71,
+     "cost_per_result": 720,
+     "target": 800,
+     "action": "scale"
+    },
+    {
+     "name": "Reel: \"What will you be at 25?\"",
+     "objective": "program",
+     "spend_inr": 117000,
+     "ctr_pct": 1.86,
+     "frequency": 1.7,
+     "results": 55,
+     "cost_per_result": 2127,
+     "target": 2500,
+     "action": "scale"
+    },
+    {
+     "name": "Carousel: a day as an Alcovian",
+     "objective": "program",
+     "spend_inr": 85800,
+     "ctr_pct": 1.46,
+     "frequency": 2.2,
+     "results": 34,
+     "cost_per_result": 2524,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Parent testimonial video",
+     "objective": "program",
+     "spend_inr": 78000,
+     "ctr_pct": 1.3,
+     "frequency": 2.7,
+     "results": 30,
+     "cost_per_result": 2600,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Static: 3-month trial offer",
+     "objective": "program",
+     "spend_inr": 46800,
+     "ctr_pct": 1.16,
+     "frequency": 1.6,
+     "results": 12,
+     "cost_per_result": 3900,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Static: guest speaker poster",
+     "objective": "workshop",
+     "spend_inr": 41850,
+     "ctr_pct": 1.0,
+     "frequency": 2.8,
+     "results": 42,
+     "cost_per_result": 996,
+     "target": 800,
+     "action": "hold"
+    },
+    {
+     "name": "Static: \"Top 1% students\" banner",
+     "objective": "program",
+     "spend_inr": 62400,
+     "ctr_pct": 0.76,
+     "frequency": 2.0,
+     "results": 10,
+     "cost_per_result": 6240,
+     "target": 2500,
+     "action": "drop"
+    }
+   ],
+   "pages": [
+    {
+     "page": "/workshop-signup",
+     "visits": 5160,
+     "drop_off_pct": 48.8,
+     "latest_mobile_load_s": 1.7,
+     "health": "healthy"
+    },
+    {
+     "page": "/career-program",
+     "visits": 3450,
+     "drop_off_pct": 59.1,
+     "latest_mobile_load_s": 2.2,
+     "health": "healthy"
+    },
+    {
+     "page": "/trial-offer",
+     "visits": 980,
+     "drop_off_pct": 67.9,
+     "latest_mobile_load_s": 2.9,
+     "health": "high drop-off"
+    }
+   ],
+   "drop_stages": [
+    {
+     "last_stage_reached": "lead",
+     "dropped": 363,
+     "avg_days_in_funnel": 6.5
+    },
+    {
+     "last_stage_reached": "qualified",
+     "dropped": 71,
+     "avg_days_in_funnel": 9.7
+    },
+    {
+     "last_stage_reached": "discovery_set",
+     "dropped": 25,
+     "avg_days_in_funnel": 13.6
+    },
+    {
+     "last_stage_reached": "ambition_done",
+     "dropped": 20,
+     "avg_days_in_funnel": 20.2
+    },
+    {
+     "last_stage_reached": "discovery_showed",
+     "dropped": 18,
+     "avg_days_in_funnel": 16.1
+    },
+    {
+     "last_stage_reached": "architect_done",
+     "dropped": 16,
+     "avg_days_in_funnel": 24.0
+    }
+   ]
+  },
+  "0-3": {
+   "from": "2026-05-01",
+   "to": "2026-08-31",
+   "revenue": [
+    {
+     "month": "2026-05-01",
+     "full_program_inr": 180000.0,
+     "trial_inr": 90000.0,
+     "workshop_inr": 135966.0,
+     "total_inr": 405966.0,
+     "target_inr": 500000.0,
+     "pct_of_target": 81.2,
+     "trial_signups": 2,
+     "full_signups": 1,
+     "workshop_seats": 34,
+     "program_share_pct": 66.5
+    },
+    {
+     "month": "2026-06-01",
+     "full_program_inr": 180000.0,
+     "trial_inr": 135000.0,
+     "workshop_inr": 163959.0,
+     "total_inr": 478959.0,
+     "target_inr": 550000.0,
+     "pct_of_target": 87.1,
+     "trial_signups": 3,
+     "full_signups": 1,
+     "workshop_seats": 41,
+     "program_share_pct": 65.8
+    },
+    {
+     "month": "2026-07-01",
+     "full_program_inr": 360000.0,
+     "trial_inr": 135000.0,
+     "workshop_inr": 151962.0,
+     "total_inr": 646962.0,
+     "target_inr": 650000.0,
+     "pct_of_target": 99.5,
+     "trial_signups": 3,
+     "full_signups": 2,
+     "workshop_seats": 38,
+     "program_share_pct": 76.5
+    },
+    {
+     "month": "2026-08-01",
+     "full_program_inr": 360000.0,
+     "trial_inr": 180000.0,
+     "workshop_inr": 207948.0,
+     "total_inr": 747948.0,
+     "target_inr": 750000.0,
+     "pct_of_target": 99.7,
+     "trial_signups": 4,
+     "full_signups": 2,
+     "workshop_seats": 52,
+     "program_share_pct": 72.2
+    }
+   ],
+   "unpaid": [
+    {
+     "invoice_id": "INV-0412",
+     "billed_to": "Parent of Aarav S.",
+     "product": "full",
+     "amount_inr": 180000.0,
+     "issued_on": "2026-07-28",
+     "due_on": "2026-08-04",
+     "days_overdue": 73,
+     "status": "critical"
+    },
+    {
+     "invoice_id": "INV-0447",
+     "billed_to": "Parent of Myra K.",
+     "product": "trial",
+     "amount_inr": 45000.0,
+     "issued_on": "2026-08-19",
+     "due_on": "2026-08-26",
+     "days_overdue": 51,
+     "status": "critical"
+    }
+   ],
+   "funnel": [
+    {
+     "n": 1,
+     "stage": "Total leads",
+     "leads": 756,
+     "step_pct": null,
+     "of_all_leads_pct": 100.0
+    },
+    {
+     "n": 2,
+     "stage": "Qualified",
+     "leads": 234,
+     "step_pct": 31.0,
+     "of_all_leads_pct": 31.0
+    },
+    {
+     "n": 3,
+     "stage": "Discovery call set",
+     "leads": 131,
+     "step_pct": 56.0,
+     "of_all_leads_pct": 17.3
+    },
+    {
+     "n": 4,
+     "stage": "Showed up to call",
+     "leads": 97,
+     "step_pct": 74.0,
+     "of_all_leads_pct": 12.8
+    },
+    {
+     "n": 5,
+     "stage": "Ambition interview",
+     "leads": 71,
+     "step_pct": 73.2,
+     "of_all_leads_pct": 9.4
+    },
+    {
+     "n": 6,
+     "stage": "Architect session",
+     "leads": 41,
+     "step_pct": 57.7,
+     "of_all_leads_pct": 5.4
+    },
+    {
+     "n": 7,
+     "stage": "Paid sign-up",
+     "leads": 18,
+     "step_pct": 43.9,
+     "of_all_leads_pct": 2.4
+    }
+   ],
+   "funnel_kpis": [
+    {
+     "cost_per_qualified_lead_inr": 2350,
+     "program_conversion_pct": 2.38,
+     "organic_leads": 86,
+     "avg_days_to_pay": 17.5,
+     "avg_days_to_drop": 8.7
+    }
+   ],
+   "creatives": [
+    {
+     "name": "Reel: workshop highlights",
+     "objective": "workshop",
+     "spend_inr": 72050,
+     "ctr_pct": 2.05,
+     "frequency": 1.8,
+     "results": 99,
+     "cost_per_result": 728,
+     "target": 800,
+     "action": "scale"
+    },
+    {
+     "name": "Reel: \"What will you be at 25?\"",
+     "objective": "program",
+     "spend_inr": 165000,
+     "ctr_pct": 1.85,
+     "frequency": 1.9,
+     "results": 75,
+     "cost_per_result": 2200,
+     "target": 2500,
+     "action": "scale"
+    },
+    {
+     "name": "Carousel: a day as an Alcovian",
+     "objective": "program",
+     "spend_inr": 121000,
+     "ctr_pct": 1.45,
+     "frequency": 2.4,
+     "results": 53,
+     "cost_per_result": 2283,
+     "target": 2500,
+     "action": "scale"
+    },
+    {
+     "name": "Parent testimonial video",
+     "objective": "program",
+     "spend_inr": 110000,
+     "ctr_pct": 1.21,
+     "frequency": 3.1,
+     "results": 43,
+     "cost_per_result": 2558,
+     "target": 2500,
+     "action": "refresh"
+    },
+    {
+     "name": "Static: 3-month trial offer",
+     "objective": "program",
+     "spend_inr": 66000,
+     "ctr_pct": 1.15,
+     "frequency": 1.8,
+     "results": 17,
+     "cost_per_result": 3882,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Static: guest speaker poster",
+     "objective": "workshop",
+     "spend_inr": 58950,
+     "ctr_pct": 0.94,
+     "frequency": 3.0,
+     "results": 66,
+     "cost_per_result": 893,
+     "target": 800,
+     "action": "refresh"
+    },
+    {
+     "name": "Static: \"Top 1% students\" banner",
+     "objective": "program",
+     "spend_inr": 88000,
+     "ctr_pct": 0.75,
+     "frequency": 2.2,
+     "results": 16,
+     "cost_per_result": 5500,
+     "target": 2500,
+     "action": "drop"
+    }
+   ],
+   "pages": [
+    {
+     "page": "/workshop-signup",
+     "visits": 7260,
+     "drop_off_pct": 48.8,
+     "latest_mobile_load_s": 1.8,
+     "health": "healthy"
+    },
+    {
+     "page": "/career-program",
+     "visits": 4930,
+     "drop_off_pct": 59.5,
+     "latest_mobile_load_s": 2.2,
+     "health": "healthy"
+    },
+    {
+     "page": "/trial-offer",
+     "visits": 1400,
+     "drop_off_pct": 68.6,
+     "latest_mobile_load_s": 3.1,
+     "health": "slow"
+    }
+   ],
+   "drop_stages": [
+    {
+     "last_stage_reached": "lead",
+     "dropped": 522,
+     "avg_days_in_funnel": 6.5
+    },
+    {
+     "last_stage_reached": "qualified",
+     "dropped": 103,
+     "avg_days_in_funnel": 9.8
+    },
+    {
+     "last_stage_reached": "discovery_set",
+     "dropped": 34,
+     "avg_days_in_funnel": 13.6
+    },
+    {
+     "last_stage_reached": "ambition_done",
+     "dropped": 30,
+     "avg_days_in_funnel": 20.4
+    },
+    {
+     "last_stage_reached": "discovery_showed",
+     "dropped": 26,
+     "avg_days_in_funnel": 16.3
+    },
+    {
+     "last_stage_reached": "architect_done",
+     "dropped": 23,
+     "avg_days_in_funnel": 22.9
+    }
+   ]
+  },
+  "0-4": {
+   "from": "2026-05-01",
+   "to": "2026-09-30",
+   "revenue": [
+    {
+     "month": "2026-05-01",
+     "full_program_inr": 180000.0,
+     "trial_inr": 90000.0,
+     "workshop_inr": 135966.0,
+     "total_inr": 405966.0,
+     "target_inr": 500000.0,
+     "pct_of_target": 81.2,
+     "trial_signups": 2,
+     "full_signups": 1,
+     "workshop_seats": 34,
+     "program_share_pct": 66.5
+    },
+    {
+     "month": "2026-06-01",
+     "full_program_inr": 180000.0,
+     "trial_inr": 135000.0,
+     "workshop_inr": 163959.0,
+     "total_inr": 478959.0,
+     "target_inr": 550000.0,
+     "pct_of_target": 87.1,
+     "trial_signups": 3,
+     "full_signups": 1,
+     "workshop_seats": 41,
+     "program_share_pct": 65.8
+    },
+    {
+     "month": "2026-07-01",
+     "full_program_inr": 360000.0,
+     "trial_inr": 135000.0,
+     "workshop_inr": 151962.0,
+     "total_inr": 646962.0,
+     "target_inr": 650000.0,
+     "pct_of_target": 99.5,
+     "trial_signups": 3,
+     "full_signups": 2,
+     "workshop_seats": 38,
+     "program_share_pct": 76.5
+    },
+    {
+     "month": "2026-08-01",
+     "full_program_inr": 360000.0,
+     "trial_inr": 180000.0,
+     "workshop_inr": 207948.0,
+     "total_inr": 747948.0,
+     "target_inr": 750000.0,
+     "pct_of_target": 99.7,
+     "trial_signups": 4,
+     "full_signups": 2,
+     "workshop_seats": 52,
+     "program_share_pct": 72.2
+    },
+    {
+     "month": "2026-09-01",
+     "full_program_inr": 360000.0,
+     "trial_inr": 225000.0,
+     "workshop_inr": 187953.0,
+     "total_inr": 772953.0,
+     "target_inr": 850000.0,
+     "pct_of_target": 90.9,
+     "trial_signups": 5,
+     "full_signups": 2,
+     "workshop_seats": 47,
+     "program_share_pct": 75.7
+    }
+   ],
+   "unpaid": [
+    {
+     "invoice_id": "INV-0412",
+     "billed_to": "Parent of Aarav S.",
+     "product": "full",
+     "amount_inr": 180000.0,
+     "issued_on": "2026-07-28",
+     "due_on": "2026-08-04",
+     "days_overdue": 73,
+     "status": "critical"
+    },
+    {
+     "invoice_id": "INV-0447",
+     "billed_to": "Parent of Myra K.",
+     "product": "trial",
+     "amount_inr": 45000.0,
+     "issued_on": "2026-08-19",
+     "due_on": "2026-08-26",
+     "days_overdue": 51,
+     "status": "critical"
+    },
+    {
+     "invoice_id": "INV-0471",
+     "billed_to": "Parent of Kabir R.",
+     "product": "full",
+     "amount_inr": 180000.0,
+     "issued_on": "2026-09-08",
+     "due_on": "2026-09-15",
+     "days_overdue": 31,
+     "status": "critical"
+    },
+    {
+     "invoice_id": "INV-0483",
+     "billed_to": "Parent of Ira P.",
+     "product": "trial",
+     "amount_inr": 45000.0,
+     "issued_on": "2026-09-24",
+     "due_on": "2026-10-01",
+     "days_overdue": 15,
+     "status": "overdue"
+    }
+   ],
+   "funnel": [
+    {
+     "n": 1,
+     "stage": "Total leads",
+     "leads": 1004,
+     "step_pct": null,
+     "of_all_leads_pct": 100.0
+    },
+    {
+     "n": 2,
+     "stage": "Qualified",
+     "leads": 312,
+     "step_pct": 31.1,
+     "of_all_leads_pct": 31.1
+    },
+    {
+     "n": 3,
+     "stage": "Discovery call set",
+     "leads": 175,
+     "step_pct": 56.1,
+     "of_all_leads_pct": 17.4
+    },
+    {
+     "n": 4,
+     "stage": "Showed up to call",
+     "leads": 130,
+     "step_pct": 74.3,
+     "of_all_leads_pct": 12.9
+    },
+    {
+     "n": 5,
+     "stage": "Ambition interview",
+     "leads": 96,
+     "step_pct": 73.8,
+     "of_all_leads_pct": 9.6
+    },
+    {
+     "n": 6,
+     "stage": "Architect session",
+     "leads": 55,
+     "step_pct": 57.3,
+     "of_all_leads_pct": 5.5
+    },
+    {
+     "n": 7,
+     "stage": "Paid sign-up",
+     "leads": 25,
+     "step_pct": 45.5,
+     "of_all_leads_pct": 2.5
+    }
+   ],
+   "funnel_kpis": [
+    {
+     "cost_per_qualified_lead_inr": 2308,
+     "program_conversion_pct": 2.49,
+     "organic_leads": 114,
+     "avg_days_to_pay": 16.8,
+     "avg_days_to_drop": 8.7
+    }
+   ],
+   "creatives": [
+    {
+     "name": "Reel: workshop highlights",
+     "objective": "workshop",
+     "spend_inr": 93500,
+     "ctr_pct": 2.01,
+     "frequency": 1.9,
+     "results": 129,
+     "cost_per_result": 725,
+     "target": 800,
+     "action": "scale"
+    },
+    {
+     "name": "Reel: \"What will you be at 25?\"",
+     "objective": "program",
+     "spend_inr": 216000,
+     "ctr_pct": 1.81,
+     "frequency": 2.1,
+     "results": 103,
+     "cost_per_result": 2097,
+     "target": 2500,
+     "action": "scale"
+    },
+    {
+     "name": "Carousel: a day as an Alcovian",
+     "objective": "program",
+     "spend_inr": 158400,
+     "ctr_pct": 1.41,
+     "frequency": 2.6,
+     "results": 74,
+     "cost_per_result": 2141,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Parent testimonial video",
+     "objective": "program",
+     "spend_inr": 144000,
+     "ctr_pct": 1.14,
+     "frequency": 3.4,
+     "results": 52,
+     "cost_per_result": 2769,
+     "target": 2500,
+     "action": "refresh"
+    },
+    {
+     "name": "Static: 3-month trial offer",
+     "objective": "program",
+     "spend_inr": 86400,
+     "ctr_pct": 1.11,
+     "frequency": 2.0,
+     "results": 26,
+     "cost_per_result": 3323,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Static: guest speaker poster",
+     "objective": "workshop",
+     "spend_inr": 76500,
+     "ctr_pct": 0.91,
+     "frequency": 3.2,
+     "results": 83,
+     "cost_per_result": 922,
+     "target": 800,
+     "action": "refresh"
+    },
+    {
+     "name": "Static: \"Top 1% students\" banner",
+     "objective": "program",
+     "spend_inr": 115200,
+     "ctr_pct": 0.71,
+     "frequency": 2.4,
+     "results": 17,
+     "cost_per_result": 6776,
+     "target": 2500,
+     "action": "drop"
+    }
+   ],
+   "pages": [
+    {
+     "page": "/workshop-signup",
+     "visits": 9310,
+     "drop_off_pct": 49.3,
+     "latest_mobile_load_s": 1.8,
+     "health": "healthy"
+    },
+    {
+     "page": "/career-program",
+     "visits": 6490,
+     "drop_off_pct": 60.0,
+     "latest_mobile_load_s": 2.3,
+     "health": "healthy"
+    },
+    {
+     "page": "/trial-offer",
+     "visits": 1840,
+     "drop_off_pct": 69.6,
+     "latest_mobile_load_s": 3.3,
+     "health": "slow"
+    }
+   ],
+   "drop_stages": [
+    {
+     "last_stage_reached": "lead",
+     "dropped": 692,
+     "avg_days_in_funnel": 6.6
+    },
+    {
+     "last_stage_reached": "qualified",
+     "dropped": 137,
+     "avg_days_in_funnel": 9.8
+    },
+    {
+     "last_stage_reached": "discovery_set",
+     "dropped": 44,
+     "avg_days_in_funnel": 13.2
+    },
+    {
+     "last_stage_reached": "ambition_done",
+     "dropped": 40,
+     "avg_days_in_funnel": 20.5
+    },
+    {
+     "last_stage_reached": "discovery_showed",
+     "dropped": 33,
+     "avg_days_in_funnel": 16.4
+    },
+    {
+     "last_stage_reached": "architect_done",
+     "dropped": 27,
+     "avg_days_in_funnel": 23.0
+    }
+   ]
+  },
+  "0-5": {
+   "from": "2026-05-01",
+   "to": "2026-10-16",
+   "revenue": [
+    {
+     "month": "2026-05-01",
+     "full_program_inr": 180000.0,
+     "trial_inr": 90000.0,
+     "workshop_inr": 135966.0,
+     "total_inr": 405966.0,
+     "target_inr": 500000.0,
+     "pct_of_target": 81.2,
+     "trial_signups": 2,
+     "full_signups": 1,
+     "workshop_seats": 34,
+     "program_share_pct": 66.5
+    },
+    {
+     "month": "2026-06-01",
+     "full_program_inr": 180000.0,
+     "trial_inr": 135000.0,
+     "workshop_inr": 163959.0,
+     "total_inr": 478959.0,
+     "target_inr": 550000.0,
+     "pct_of_target": 87.1,
+     "trial_signups": 3,
+     "full_signups": 1,
+     "workshop_seats": 41,
+     "program_share_pct": 65.8
+    },
+    {
+     "month": "2026-07-01",
+     "full_program_inr": 360000.0,
+     "trial_inr": 135000.0,
+     "workshop_inr": 151962.0,
+     "total_inr": 646962.0,
+     "target_inr": 650000.0,
+     "pct_of_target": 99.5,
+     "trial_signups": 3,
+     "full_signups": 2,
+     "workshop_seats": 38,
+     "program_share_pct": 76.5
+    },
+    {
+     "month": "2026-08-01",
+     "full_program_inr": 360000.0,
+     "trial_inr": 180000.0,
+     "workshop_inr": 207948.0,
+     "total_inr": 747948.0,
+     "target_inr": 750000.0,
+     "pct_of_target": 99.7,
+     "trial_signups": 4,
+     "full_signups": 2,
+     "workshop_seats": 52,
+     "program_share_pct": 72.2
+    },
+    {
+     "month": "2026-09-01",
+     "full_program_inr": 360000.0,
+     "trial_inr": 225000.0,
+     "workshop_inr": 187953.0,
+     "total_inr": 772953.0,
+     "target_inr": 850000.0,
+     "pct_of_target": 90.9,
+     "trial_signups": 5,
+     "full_signups": 2,
+     "workshop_seats": 47,
+     "program_share_pct": 75.7
+    },
+    {
+     "month": "2026-10-01",
+     "full_program_inr": 180000.0,
+     "trial_inr": 135000.0,
+     "workshop_inr": 115971.0,
+     "total_inr": 430971.0,
+     "target_inr": 900000.0,
+     "pct_of_target": 47.9,
+     "trial_signups": 3,
+     "full_signups": 1,
+     "workshop_seats": 29,
+     "program_share_pct": 73.1
+    }
+   ],
+   "unpaid": [
+    {
+     "invoice_id": "INV-0412",
+     "billed_to": "Parent of Aarav S.",
+     "product": "full",
+     "amount_inr": 180000.0,
+     "issued_on": "2026-07-28",
+     "due_on": "2026-08-04",
+     "days_overdue": 73,
+     "status": "critical"
+    },
+    {
+     "invoice_id": "INV-0447",
+     "billed_to": "Parent of Myra K.",
+     "product": "trial",
+     "amount_inr": 45000.0,
+     "issued_on": "2026-08-19",
+     "due_on": "2026-08-26",
+     "days_overdue": 51,
+     "status": "critical"
+    },
+    {
+     "invoice_id": "INV-0471",
+     "billed_to": "Parent of Kabir R.",
+     "product": "full",
+     "amount_inr": 180000.0,
+     "issued_on": "2026-09-08",
+     "due_on": "2026-09-15",
+     "days_overdue": 31,
+     "status": "critical"
+    },
+    {
+     "invoice_id": "INV-0483",
+     "billed_to": "Parent of Ira P.",
+     "product": "trial",
+     "amount_inr": 45000.0,
+     "issued_on": "2026-09-24",
+     "due_on": "2026-10-01",
+     "days_overdue": 15,
+     "status": "overdue"
+    },
+    {
+     "invoice_id": "INV-0496",
+     "billed_to": "Parent of Vihaan M.",
+     "product": "trial",
+     "amount_inr": 45000.0,
+     "issued_on": "2026-10-06",
+     "due_on": "2026-10-13",
+     "days_overdue": 3,
+     "status": "overdue"
+    },
+    {
+     "invoice_id": "INV-0502",
+     "billed_to": "Parent of Sara D.",
+     "product": "full",
+     "amount_inr": 180000.0,
+     "issued_on": "2026-10-13",
+     "due_on": "2026-10-20",
+     "days_overdue": 0,
+     "status": "not due"
+    }
+   ],
+   "funnel": [
+    {
+     "n": 1,
+     "stage": "Total leads",
+     "leads": 1139,
+     "step_pct": null,
+     "of_all_leads_pct": 100.0
+    },
+    {
+     "n": 2,
+     "stage": "Qualified",
+     "leads": 354,
+     "step_pct": 31.1,
+     "of_all_leads_pct": 31.1
+    },
+    {
+     "n": 3,
+     "stage": "Discovery call set",
+     "leads": 198,
+     "step_pct": 55.9,
+     "of_all_leads_pct": 17.4
+    },
+    {
+     "n": 4,
+     "stage": "Showed up to call",
+     "leads": 146,
+     "step_pct": 73.7,
+     "of_all_leads_pct": 12.8
+    },
+    {
+     "n": 5,
+     "stage": "Ambition interview",
+     "leads": 108,
+     "step_pct": 74.0,
+     "of_all_leads_pct": 9.5
+    },
+    {
+     "n": 6,
+     "stage": "Architect session",
+     "leads": 62,
+     "step_pct": 57.4,
+     "of_all_leads_pct": 5.4
+    },
+    {
+     "n": 7,
+     "stage": "Paid sign-up",
+     "leads": 29,
+     "step_pct": 46.8,
+     "of_all_leads_pct": 2.5
+    }
+   ],
+   "funnel_kpis": [
+    {
+     "cost_per_qualified_lead_inr": 2288,
+     "program_conversion_pct": 2.55,
+     "organic_leads": 129,
+     "avg_days_to_pay": 16.3,
+     "avg_days_to_drop": 8.6
+    }
+   ],
+   "creatives": [
+    {
+     "name": "Reel: workshop highlights",
+     "objective": "workshop",
+     "spend_inr": 105600,
+     "ctr_pct": 2.0,
+     "frequency": 2.0,
+     "results": 146,
+     "cost_per_result": 723,
+     "target": 800,
+     "action": "scale"
+    },
+    {
+     "name": "Reel: \"What will you be at 25?\"",
+     "objective": "program",
+     "spend_inr": 243000,
+     "ctr_pct": 1.8,
+     "frequency": 2.2,
+     "results": 115,
+     "cost_per_result": 2113,
+     "target": 2500,
+     "action": "scale"
+    },
+    {
+     "name": "Carousel: a day as an Alcovian",
+     "objective": "program",
+     "spend_inr": 178200,
+     "ctr_pct": 1.4,
+     "frequency": 2.7,
+     "results": 83,
+     "cost_per_result": 2147,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Static: 3-month trial offer",
+     "objective": "program",
+     "spend_inr": 97200,
+     "ctr_pct": 1.1,
+     "frequency": 2.1,
+     "results": 29,
+     "cost_per_result": 3352,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Parent testimonial video",
+     "objective": "program",
+     "spend_inr": 162000,
+     "ctr_pct": 1.1,
+     "frequency": 3.6,
+     "results": 63,
+     "cost_per_result": 2571,
+     "target": 2500,
+     "action": "refresh"
+    },
+    {
+     "name": "Static: guest speaker poster",
+     "objective": "workshop",
+     "spend_inr": 86400,
+     "ctr_pct": 0.89,
+     "frequency": 3.4,
+     "results": 95,
+     "cost_per_result": 909,
+     "target": 800,
+     "action": "refresh"
+    },
+    {
+     "name": "Static: \"Top 1% students\" banner",
+     "objective": "program",
+     "spend_inr": 129600,
+     "ctr_pct": 0.7,
+     "frequency": 2.5,
+     "results": 19,
+     "cost_per_result": 6821,
+     "target": 2500,
+     "action": "drop"
+    }
+   ],
+   "pages": [
+    {
+     "page": "/workshop-signup",
+     "visits": 10570,
+     "drop_off_pct": 49.3,
+     "latest_mobile_load_s": 1.9,
+     "health": "healthy"
+    },
+    {
+     "page": "/career-program",
+     "visits": 7350,
+     "drop_off_pct": 60.3,
+     "latest_mobile_load_s": 2.3,
+     "health": "healthy"
+    },
+    {
+     "page": "/trial-offer",
+     "visits": 2090,
+     "drop_off_pct": 70.2,
+     "latest_mobile_load_s": 3.4,
+     "health": "slow"
+    }
+   ],
+   "drop_stages": [
+    {
+     "last_stage_reached": "lead",
+     "dropped": 751,
+     "avg_days_in_funnel": 6.6
+    },
+    {
+     "last_stage_reached": "qualified",
+     "dropped": 147,
+     "avg_days_in_funnel": 9.6
+    },
+    {
+     "last_stage_reached": "discovery_set",
+     "dropped": 45,
+     "avg_days_in_funnel": 13.1
+    },
+    {
+     "last_stage_reached": "ambition_done",
+     "dropped": 40,
+     "avg_days_in_funnel": 20.5
+    },
+    {
+     "last_stage_reached": "discovery_showed",
+     "dropped": 33,
+     "avg_days_in_funnel": 16.4
+    },
+    {
+     "last_stage_reached": "architect_done",
+     "dropped": 27,
+     "avg_days_in_funnel": 23.0
+    }
+   ]
+  },
+  "1-1": {
+   "from": "2026-06-01",
+   "to": "2026-06-30",
+   "revenue": [
+    {
+     "month": "2026-06-01",
+     "full_program_inr": 180000.0,
+     "trial_inr": 135000.0,
+     "workshop_inr": 163959.0,
+     "total_inr": 478959.0,
+     "target_inr": 550000.0,
+     "pct_of_target": 87.1,
+     "trial_signups": 3,
+     "full_signups": 1,
+     "workshop_seats": 41,
+     "program_share_pct": 65.8
+    }
+   ],
+   "unpaid": [],
+   "funnel": [
+    {
+     "n": 1,
+     "stage": "Total leads",
+     "leads": 175,
+     "step_pct": null,
+     "of_all_leads_pct": 100.0
+    },
+    {
+     "n": 2,
+     "stage": "Qualified",
+     "leads": 54,
+     "step_pct": 30.9,
+     "of_all_leads_pct": 30.9
+    },
+    {
+     "n": 3,
+     "stage": "Discovery call set",
+     "leads": 30,
+     "step_pct": 55.6,
+     "of_all_leads_pct": 17.1
+    },
+    {
+     "n": 4,
+     "stage": "Showed up to call",
+     "leads": 22,
+     "step_pct": 73.3,
+     "of_all_leads_pct": 12.6
+    },
+    {
+     "n": 5,
+     "stage": "Ambition interview",
+     "leads": 16,
+     "step_pct": 72.7,
+     "of_all_leads_pct": 9.1
+    },
+    {
+     "n": 6,
+     "stage": "Architect session",
+     "leads": 9,
+     "step_pct": 56.3,
+     "of_all_leads_pct": 5.1
+    },
+    {
+     "n": 7,
+     "stage": "Paid sign-up",
+     "leads": 4,
+     "step_pct": 44.4,
+     "of_all_leads_pct": 2.3
+    }
+   ],
+   "funnel_kpis": [
+    {
+     "cost_per_qualified_lead_inr": 2407,
+     "program_conversion_pct": 2.29,
+     "organic_leads": 20,
+     "avg_days_to_pay": 18.1,
+     "avg_days_to_drop": 8.5
+    }
+   ],
+   "creatives": [
+    {
+     "name": "Reel: workshop highlights",
+     "objective": "workshop",
+     "spend_inr": 17600,
+     "ctr_pct": 2.1,
+     "frequency": 1.5,
+     "results": 26,
+     "cost_per_result": 677,
+     "target": 800,
+     "action": "scale"
+    },
+    {
+     "name": "Reel: \"What will you be at 25?\"",
+     "objective": "program",
+     "spend_inr": 39000,
+     "ctr_pct": 1.9,
+     "frequency": 1.6,
+     "results": 14,
+     "cost_per_result": 2786,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Carousel: a day as an Alcovian",
+     "objective": "program",
+     "spend_inr": 28600,
+     "ctr_pct": 1.5,
+     "frequency": 1.9,
+     "results": 12,
+     "cost_per_result": 2383,
+     "target": 2500,
+     "action": "scale"
+    },
+    {
+     "name": "Parent testimonial video",
+     "objective": "program",
+     "spend_inr": 26000,
+     "ctr_pct": 1.3,
+     "frequency": 2.3,
+     "results": 15,
+     "cost_per_result": 1733,
+     "target": 2500,
+     "action": "scale"
+    },
+    {
+     "name": "Static: 3-month trial offer",
+     "objective": "program",
+     "spend_inr": 15600,
+     "ctr_pct": 1.2,
+     "frequency": 1.4,
+     "results": 2,
+     "cost_per_result": 7800,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Static: guest speaker poster",
+     "objective": "workshop",
+     "spend_inr": 14400,
+     "ctr_pct": 1.0,
+     "frequency": 2.4,
+     "results": 15,
+     "cost_per_result": 960,
+     "target": 800,
+     "action": "hold"
+    },
+    {
+     "name": "Static: \"Top 1% students\" banner",
+     "objective": "program",
+     "spend_inr": 20800,
+     "ctr_pct": 0.8,
+     "frequency": 1.8,
+     "results": 4,
+     "cost_per_result": 5200,
+     "target": 2500,
+     "action": "drop"
+    }
+   ],
+   "pages": [
+    {
+     "page": "/workshop-signup",
+     "visits": 1790,
+     "drop_off_pct": 48.0,
+     "latest_mobile_load_s": 1.8,
+     "health": "healthy"
+    },
+    {
+     "page": "/career-program",
+     "visits": 1160,
+     "drop_off_pct": 58.6,
+     "latest_mobile_load_s": 2.1,
+     "health": "healthy"
+    },
+    {
+     "page": "/trial-offer",
+     "visits": 330,
+     "drop_off_pct": 63.6,
+     "latest_mobile_load_s": 2.7,
+     "health": "healthy"
+    }
+   ],
+   "drop_stages": [
+    {
+     "last_stage_reached": "lead",
+     "dropped": 121,
+     "avg_days_in_funnel": 6.4
+    },
+    {
+     "last_stage_reached": "qualified",
+     "dropped": 24,
+     "avg_days_in_funnel": 9.5
+    },
+    {
+     "last_stage_reached": "discovery_set",
+     "dropped": 8,
+     "avg_days_in_funnel": 12.7
+    },
+    {
+     "last_stage_reached": "ambition_done",
+     "dropped": 7,
+     "avg_days_in_funnel": 19.8
+    },
+    {
+     "last_stage_reached": "discovery_showed",
+     "dropped": 6,
+     "avg_days_in_funnel": 17.7
+    },
+    {
+     "last_stage_reached": "architect_done",
+     "dropped": 5,
+     "avg_days_in_funnel": 23.2
+    }
+   ]
+  },
+  "1-2": {
+   "from": "2026-06-01",
+   "to": "2026-07-31",
+   "revenue": [
+    {
+     "month": "2026-06-01",
+     "full_program_inr": 180000.0,
+     "trial_inr": 135000.0,
+     "workshop_inr": 163959.0,
+     "total_inr": 478959.0,
+     "target_inr": 550000.0,
+     "pct_of_target": 87.1,
+     "trial_signups": 3,
+     "full_signups": 1,
+     "workshop_seats": 41,
+     "program_share_pct": 65.8
+    },
+    {
+     "month": "2026-07-01",
+     "full_program_inr": 360000.0,
+     "trial_inr": 135000.0,
+     "workshop_inr": 151962.0,
+     "total_inr": 646962.0,
+     "target_inr": 650000.0,
+     "pct_of_target": 99.5,
+     "trial_signups": 3,
+     "full_signups": 2,
+     "workshop_seats": 38,
+     "program_share_pct": 76.5
+    }
+   ],
+   "unpaid": [
+    {
+     "invoice_id": "INV-0412",
+     "billed_to": "Parent of Aarav S.",
+     "product": "full",
+     "amount_inr": 180000.0,
+     "issued_on": "2026-07-28",
+     "due_on": "2026-08-04",
+     "days_overdue": 73,
+     "status": "critical"
+    }
+   ],
+   "funnel": [
+    {
+     "n": 1,
+     "stage": "Total leads",
+     "leads": 367,
+     "step_pct": null,
+     "of_all_leads_pct": 100.0
+    },
+    {
+     "n": 2,
+     "stage": "Qualified",
+     "leads": 114,
+     "step_pct": 31.1,
+     "of_all_leads_pct": 31.1
+    },
+    {
+     "n": 3,
+     "stage": "Discovery call set",
+     "leads": 64,
+     "step_pct": 56.1,
+     "of_all_leads_pct": 17.4
+    },
+    {
+     "n": 4,
+     "stage": "Showed up to call",
+     "leads": 47,
+     "step_pct": 73.4,
+     "of_all_leads_pct": 12.8
+    },
+    {
+     "n": 5,
+     "stage": "Ambition interview",
+     "leads": 34,
+     "step_pct": 72.3,
+     "of_all_leads_pct": 9.3
+    },
+    {
+     "n": 6,
+     "stage": "Architect session",
+     "leads": 20,
+     "step_pct": 58.8,
+     "of_all_leads_pct": 5.4
+    },
+    {
+     "n": 7,
+     "stage": "Paid sign-up",
+     "leads": 9,
+     "step_pct": 45.0,
+     "of_all_leads_pct": 2.5
+    }
+   ],
+   "funnel_kpis": [
+    {
+     "cost_per_qualified_lead_inr": 2368,
+     "program_conversion_pct": 2.45,
+     "organic_leads": 42,
+     "avg_days_to_pay": 18.6,
+     "avg_days_to_drop": 8.6
+    }
+   ],
+   "creatives": [
+    {
+     "name": "Reel: workshop highlights",
+     "objective": "workshop",
+     "spend_inr": 34650,
+     "ctr_pct": 2.05,
+     "frequency": 1.6,
+     "results": 50,
+     "cost_per_result": 693,
+     "target": 800,
+     "action": "scale"
+    },
+    {
+     "name": "Reel: \"What will you be at 25?\"",
+     "objective": "program",
+     "spend_inr": 81000,
+     "ctr_pct": 1.85,
+     "frequency": 1.7,
+     "results": 36,
+     "cost_per_result": 2250,
+     "target": 2500,
+     "action": "scale"
+    },
+    {
+     "name": "Carousel: a day as an Alcovian",
+     "objective": "program",
+     "spend_inr": 59400,
+     "ctr_pct": 1.45,
+     "frequency": 2.2,
+     "results": 24,
+     "cost_per_result": 2475,
+     "target": 2500,
+     "action": "scale"
+    },
+    {
+     "name": "Parent testimonial video",
+     "objective": "program",
+     "spend_inr": 54000,
+     "ctr_pct": 1.25,
+     "frequency": 2.7,
+     "results": 24,
+     "cost_per_result": 2250,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Static: 3-month trial offer",
+     "objective": "program",
+     "spend_inr": 32400,
+     "ctr_pct": 1.15,
+     "frequency": 1.6,
+     "results": 6,
+     "cost_per_result": 5400,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Static: guest speaker poster",
+     "objective": "workshop",
+     "spend_inr": 28350,
+     "ctr_pct": 0.95,
+     "frequency": 2.8,
+     "results": 29,
+     "cost_per_result": 978,
+     "target": 800,
+     "action": "refresh"
+    },
+    {
+     "name": "Static: \"Top 1% students\" banner",
+     "objective": "program",
+     "spend_inr": 43200,
+     "ctr_pct": 0.75,
+     "frequency": 2.0,
+     "results": 9,
+     "cost_per_result": 4800,
+     "target": 2500,
+     "action": "drop"
+    }
+   ],
+   "pages": [
+    {
+     "page": "/workshop-signup",
+     "visits": 3510,
+     "drop_off_pct": 48.8,
+     "latest_mobile_load_s": 1.7,
+     "health": "healthy"
+    },
+    {
+     "page": "/career-program",
+     "visits": 2400,
+     "drop_off_pct": 59.3,
+     "latest_mobile_load_s": 2.2,
+     "health": "healthy"
+    },
+    {
+     "page": "/trial-offer",
+     "visits": 680,
+     "drop_off_pct": 67.4,
+     "latest_mobile_load_s": 2.9,
+     "health": "high drop-off"
+    }
+   ],
+   "drop_stages": [
+    {
+     "last_stage_reached": "lead",
+     "dropped": 253,
+     "avg_days_in_funnel": 6.5
+    },
+    {
+     "last_stage_reached": "qualified",
+     "dropped": 50,
+     "avg_days_in_funnel": 9.8
+    },
+    {
+     "last_stage_reached": "discovery_set",
+     "dropped": 17,
+     "avg_days_in_funnel": 12.6
+    },
+    {
+     "last_stage_reached": "ambition_done",
+     "dropped": 14,
+     "avg_days_in_funnel": 19.5
+    },
+    {
+     "last_stage_reached": "discovery_showed",
+     "dropped": 13,
+     "avg_days_in_funnel": 16.3
+    },
+    {
+     "last_stage_reached": "architect_done",
+     "dropped": 11,
+     "avg_days_in_funnel": 23.5
+    }
+   ]
+  },
+  "1-3": {
+   "from": "2026-06-01",
+   "to": "2026-08-31",
+   "revenue": [
+    {
+     "month": "2026-06-01",
+     "full_program_inr": 180000.0,
+     "trial_inr": 135000.0,
+     "workshop_inr": 163959.0,
+     "total_inr": 478959.0,
+     "target_inr": 550000.0,
+     "pct_of_target": 87.1,
+     "trial_signups": 3,
+     "full_signups": 1,
+     "workshop_seats": 41,
+     "program_share_pct": 65.8
+    },
+    {
+     "month": "2026-07-01",
+     "full_program_inr": 360000.0,
+     "trial_inr": 135000.0,
+     "workshop_inr": 151962.0,
+     "total_inr": 646962.0,
+     "target_inr": 650000.0,
+     "pct_of_target": 99.5,
+     "trial_signups": 3,
+     "full_signups": 2,
+     "workshop_seats": 38,
+     "program_share_pct": 76.5
+    },
+    {
+     "month": "2026-08-01",
+     "full_program_inr": 360000.0,
+     "trial_inr": 180000.0,
+     "workshop_inr": 207948.0,
+     "total_inr": 747948.0,
+     "target_inr": 750000.0,
+     "pct_of_target": 99.7,
+     "trial_signups": 4,
+     "full_signups": 2,
+     "workshop_seats": 52,
+     "program_share_pct": 72.2
+    }
+   ],
+   "unpaid": [
+    {
+     "invoice_id": "INV-0412",
+     "billed_to": "Parent of Aarav S.",
+     "product": "full",
+     "amount_inr": 180000.0,
+     "issued_on": "2026-07-28",
+     "due_on": "2026-08-04",
+     "days_overdue": 73,
+     "status": "critical"
+    },
+    {
+     "invoice_id": "INV-0447",
+     "billed_to": "Parent of Myra K.",
+     "product": "trial",
+     "amount_inr": 45000.0,
+     "issued_on": "2026-08-19",
+     "due_on": "2026-08-26",
+     "days_overdue": 51,
+     "status": "critical"
+    }
+   ],
+   "funnel": [
+    {
+     "n": 1,
+     "stage": "Total leads",
+     "leads": 598,
+     "step_pct": null,
+     "of_all_leads_pct": 100.0
+    },
+    {
+     "n": 2,
+     "stage": "Qualified",
+     "leads": 186,
+     "step_pct": 31.1,
+     "of_all_leads_pct": 31.1
+    },
+    {
+     "n": 3,
+     "stage": "Discovery call set",
+     "leads": 104,
+     "step_pct": 55.9,
+     "of_all_leads_pct": 17.4
+    },
+    {
+     "n": 4,
+     "stage": "Showed up to call",
+     "leads": 78,
+     "step_pct": 75.0,
+     "of_all_leads_pct": 13.0
+    },
+    {
+     "n": 5,
+     "stage": "Ambition interview",
+     "leads": 57,
+     "step_pct": 73.1,
+     "of_all_leads_pct": 9.5
+    },
+    {
+     "n": 6,
+     "stage": "Architect session",
+     "leads": 33,
+     "step_pct": 57.9,
+     "of_all_leads_pct": 5.5
+    },
+    {
+     "n": 7,
+     "stage": "Paid sign-up",
+     "leads": 15,
+     "step_pct": 45.5,
+     "of_all_leads_pct": 2.5
+    }
+   ],
+   "funnel_kpis": [
+    {
+     "cost_per_qualified_lead_inr": 2312,
+     "program_conversion_pct": 2.51,
+     "organic_leads": 68,
+     "avg_days_to_pay": 17.5,
+     "avg_days_to_drop": 8.7
+    }
+   ],
+   "creatives": [
+    {
+     "name": "Reel: workshop highlights",
+     "objective": "workshop",
+     "spend_inr": 55550,
+     "ctr_pct": 2.03,
+     "frequency": 1.8,
+     "results": 78,
+     "cost_per_result": 712,
+     "target": 800,
+     "action": "scale"
+    },
+    {
+     "name": "Reel: \"What will you be at 25?\"",
+     "objective": "program",
+     "spend_inr": 129000,
+     "ctr_pct": 1.83,
+     "frequency": 1.9,
+     "results": 56,
+     "cost_per_result": 2304,
+     "target": 2500,
+     "action": "scale"
+    },
+    {
+     "name": "Carousel: a day as an Alcovian",
+     "objective": "program",
+     "spend_inr": 94600,
+     "ctr_pct": 1.43,
+     "frequency": 2.4,
+     "results": 43,
+     "cost_per_result": 2200,
+     "target": 2500,
+     "action": "scale"
+    },
+    {
+     "name": "Parent testimonial video",
+     "objective": "program",
+     "spend_inr": 86000,
+     "ctr_pct": 1.16,
+     "frequency": 3.1,
+     "results": 37,
+     "cost_per_result": 2324,
+     "target": 2500,
+     "action": "refresh"
+    },
+    {
+     "name": "Static: 3-month trial offer",
+     "objective": "program",
+     "spend_inr": 51600,
+     "ctr_pct": 1.13,
+     "frequency": 1.8,
+     "results": 11,
+     "cost_per_result": 4691,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Static: guest speaker poster",
+     "objective": "workshop",
+     "spend_inr": 45450,
+     "ctr_pct": 0.89,
+     "frequency": 3.0,
+     "results": 53,
+     "cost_per_result": 858,
+     "target": 800,
+     "action": "refresh"
+    },
+    {
+     "name": "Static: \"Top 1% students\" banner",
+     "objective": "program",
+     "spend_inr": 68800,
+     "ctr_pct": 0.73,
+     "frequency": 2.2,
+     "results": 15,
+     "cost_per_result": 4587,
+     "target": 2500,
+     "action": "drop"
+    }
+   ],
+   "pages": [
+    {
+     "page": "/workshop-signup",
+     "visits": 5610,
+     "drop_off_pct": 48.8,
+     "latest_mobile_load_s": 1.8,
+     "health": "healthy"
+    },
+    {
+     "page": "/career-program",
+     "visits": 3880,
+     "drop_off_pct": 59.7,
+     "latest_mobile_load_s": 2.2,
+     "health": "healthy"
+    },
+    {
+     "page": "/trial-offer",
+     "visits": 1100,
+     "drop_off_pct": 68.5,
+     "latest_mobile_load_s": 3.1,
+     "health": "slow"
+    }
+   ],
+   "drop_stages": [
+    {
+     "last_stage_reached": "lead",
+     "dropped": 412,
+     "avg_days_in_funnel": 6.5
+    },
+    {
+     "last_stage_reached": "qualified",
+     "dropped": 82,
+     "avg_days_in_funnel": 9.9
+    },
+    {
+     "last_stage_reached": "discovery_set",
+     "dropped": 26,
+     "avg_days_in_funnel": 13.0
+    },
+    {
+     "last_stage_reached": "ambition_done",
+     "dropped": 24,
+     "avg_days_in_funnel": 20.0
+    },
+    {
+     "last_stage_reached": "discovery_showed",
+     "dropped": 21,
+     "avg_days_in_funnel": 16.5
+    },
+    {
+     "last_stage_reached": "architect_done",
+     "dropped": 18,
+     "avg_days_in_funnel": 22.3
+    }
+   ]
+  },
+  "1-4": {
+   "from": "2026-06-01",
+   "to": "2026-09-30",
+   "revenue": [
+    {
+     "month": "2026-06-01",
+     "full_program_inr": 180000.0,
+     "trial_inr": 135000.0,
+     "workshop_inr": 163959.0,
+     "total_inr": 478959.0,
+     "target_inr": 550000.0,
+     "pct_of_target": 87.1,
+     "trial_signups": 3,
+     "full_signups": 1,
+     "workshop_seats": 41,
+     "program_share_pct": 65.8
+    },
+    {
+     "month": "2026-07-01",
+     "full_program_inr": 360000.0,
+     "trial_inr": 135000.0,
+     "workshop_inr": 151962.0,
+     "total_inr": 646962.0,
+     "target_inr": 650000.0,
+     "pct_of_target": 99.5,
+     "trial_signups": 3,
+     "full_signups": 2,
+     "workshop_seats": 38,
+     "program_share_pct": 76.5
+    },
+    {
+     "month": "2026-08-01",
+     "full_program_inr": 360000.0,
+     "trial_inr": 180000.0,
+     "workshop_inr": 207948.0,
+     "total_inr": 747948.0,
+     "target_inr": 750000.0,
+     "pct_of_target": 99.7,
+     "trial_signups": 4,
+     "full_signups": 2,
+     "workshop_seats": 52,
+     "program_share_pct": 72.2
+    },
+    {
+     "month": "2026-09-01",
+     "full_program_inr": 360000.0,
+     "trial_inr": 225000.0,
+     "workshop_inr": 187953.0,
+     "total_inr": 772953.0,
+     "target_inr": 850000.0,
+     "pct_of_target": 90.9,
+     "trial_signups": 5,
+     "full_signups": 2,
+     "workshop_seats": 47,
+     "program_share_pct": 75.7
+    }
+   ],
+   "unpaid": [
+    {
+     "invoice_id": "INV-0412",
+     "billed_to": "Parent of Aarav S.",
+     "product": "full",
+     "amount_inr": 180000.0,
+     "issued_on": "2026-07-28",
+     "due_on": "2026-08-04",
+     "days_overdue": 73,
+     "status": "critical"
+    },
+    {
+     "invoice_id": "INV-0447",
+     "billed_to": "Parent of Myra K.",
+     "product": "trial",
+     "amount_inr": 45000.0,
+     "issued_on": "2026-08-19",
+     "due_on": "2026-08-26",
+     "days_overdue": 51,
+     "status": "critical"
+    },
+    {
+     "invoice_id": "INV-0471",
+     "billed_to": "Parent of Kabir R.",
+     "product": "full",
+     "amount_inr": 180000.0,
+     "issued_on": "2026-09-08",
+     "due_on": "2026-09-15",
+     "days_overdue": 31,
+     "status": "critical"
+    },
+    {
+     "invoice_id": "INV-0483",
+     "billed_to": "Parent of Ira P.",
+     "product": "trial",
+     "amount_inr": 45000.0,
+     "issued_on": "2026-09-24",
+     "due_on": "2026-10-01",
+     "days_overdue": 15,
+     "status": "overdue"
+    }
+   ],
+   "funnel": [
+    {
+     "n": 1,
+     "stage": "Total leads",
+     "leads": 846,
+     "step_pct": null,
+     "of_all_leads_pct": 100.0
+    },
+    {
+     "n": 2,
+     "stage": "Qualified",
+     "leads": 264,
+     "step_pct": 31.2,
+     "of_all_leads_pct": 31.2
+    },
+    {
+     "n": 3,
+     "stage": "Discovery call set",
+     "leads": 148,
+     "step_pct": 56.1,
+     "of_all_leads_pct": 17.5
+    },
+    {
+     "n": 4,
+     "stage": "Showed up to call",
+     "leads": 111,
+     "step_pct": 75.0,
+     "of_all_leads_pct": 13.1
+    },
+    {
+     "n": 5,
+     "stage": "Ambition interview",
+     "leads": 82,
+     "step_pct": 73.9,
+     "of_all_leads_pct": 9.7
+    },
+    {
+     "n": 6,
+     "stage": "Architect session",
+     "leads": 47,
+     "step_pct": 57.3,
+     "of_all_leads_pct": 5.6
+    },
+    {
+     "n": 7,
+     "stage": "Paid sign-up",
+     "leads": 22,
+     "step_pct": 46.8,
+     "of_all_leads_pct": 2.6
+    }
+   ],
+   "funnel_kpis": [
+    {
+     "cost_per_qualified_lead_inr": 2273,
+     "program_conversion_pct": 2.6,
+     "organic_leads": 96,
+     "avg_days_to_pay": 16.7,
+     "avg_days_to_drop": 8.6
+    }
+   ],
+   "creatives": [
+    {
+     "name": "Reel: workshop highlights",
+     "objective": "workshop",
+     "spend_inr": 77000,
+     "ctr_pct": 1.99,
+     "frequency": 1.9,
+     "results": 108,
+     "cost_per_result": 713,
+     "target": 800,
+     "action": "scale"
+    },
+    {
+     "name": "Reel: \"What will you be at 25?\"",
+     "objective": "program",
+     "spend_inr": 180000,
+     "ctr_pct": 1.79,
+     "frequency": 2.1,
+     "results": 84,
+     "cost_per_result": 2143,
+     "target": 2500,
+     "action": "scale"
+    },
+    {
+     "name": "Carousel: a day as an Alcovian",
+     "objective": "program",
+     "spend_inr": 132000,
+     "ctr_pct": 1.39,
+     "frequency": 2.6,
+     "results": 64,
+     "cost_per_result": 2063,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Static: 3-month trial offer",
+     "objective": "program",
+     "spend_inr": 72000,
+     "ctr_pct": 1.09,
+     "frequency": 2.0,
+     "results": 20,
+     "cost_per_result": 3600,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Parent testimonial video",
+     "objective": "program",
+     "spend_inr": 120000,
+     "ctr_pct": 1.08,
+     "frequency": 3.4,
+     "results": 46,
+     "cost_per_result": 2609,
+     "target": 2500,
+     "action": "refresh"
+    },
+    {
+     "name": "Static: guest speaker poster",
+     "objective": "workshop",
+     "spend_inr": 63000,
+     "ctr_pct": 0.87,
+     "frequency": 3.2,
+     "results": 70,
+     "cost_per_result": 900,
+     "target": 800,
+     "action": "refresh"
+    },
+    {
+     "name": "Static: \"Top 1% students\" banner",
+     "objective": "program",
+     "spend_inr": 96000,
+     "ctr_pct": 0.69,
+     "frequency": 2.4,
+     "results": 16,
+     "cost_per_result": 6000,
+     "target": 2500,
+     "action": "drop"
+    }
+   ],
+   "pages": [
+    {
+     "page": "/workshop-signup",
+     "visits": 7660,
+     "drop_off_pct": 49.4,
+     "latest_mobile_load_s": 1.8,
+     "health": "healthy"
+    },
+    {
+     "page": "/career-program",
+     "visits": 5440,
+     "drop_off_pct": 60.2,
+     "latest_mobile_load_s": 2.3,
+     "health": "healthy"
+    },
+    {
+     "page": "/trial-offer",
+     "visits": 1540,
+     "drop_off_pct": 69.7,
+     "latest_mobile_load_s": 3.3,
+     "health": "slow"
+    }
+   ],
+   "drop_stages": [
+    {
+     "last_stage_reached": "lead",
+     "dropped": 582,
+     "avg_days_in_funnel": 6.5
+    },
+    {
+     "last_stage_reached": "qualified",
+     "dropped": 116,
+     "avg_days_in_funnel": 9.8
+    },
+    {
+     "last_stage_reached": "discovery_set",
+     "dropped": 36,
+     "avg_days_in_funnel": 12.6
+    },
+    {
+     "last_stage_reached": "ambition_done",
+     "dropped": 34,
+     "avg_days_in_funnel": 20.2
+    },
+    {
+     "last_stage_reached": "discovery_showed",
+     "dropped": 28,
+     "avg_days_in_funnel": 16.6
+    },
+    {
+     "last_stage_reached": "architect_done",
+     "dropped": 22,
+     "avg_days_in_funnel": 22.5
+    }
+   ]
+  },
+  "1-5": {
+   "from": "2026-06-01",
+   "to": "2026-10-16",
+   "revenue": [
+    {
+     "month": "2026-06-01",
+     "full_program_inr": 180000.0,
+     "trial_inr": 135000.0,
+     "workshop_inr": 163959.0,
+     "total_inr": 478959.0,
+     "target_inr": 550000.0,
+     "pct_of_target": 87.1,
+     "trial_signups": 3,
+     "full_signups": 1,
+     "workshop_seats": 41,
+     "program_share_pct": 65.8
+    },
+    {
+     "month": "2026-07-01",
+     "full_program_inr": 360000.0,
+     "trial_inr": 135000.0,
+     "workshop_inr": 151962.0,
+     "total_inr": 646962.0,
+     "target_inr": 650000.0,
+     "pct_of_target": 99.5,
+     "trial_signups": 3,
+     "full_signups": 2,
+     "workshop_seats": 38,
+     "program_share_pct": 76.5
+    },
+    {
+     "month": "2026-08-01",
+     "full_program_inr": 360000.0,
+     "trial_inr": 180000.0,
+     "workshop_inr": 207948.0,
+     "total_inr": 747948.0,
+     "target_inr": 750000.0,
+     "pct_of_target": 99.7,
+     "trial_signups": 4,
+     "full_signups": 2,
+     "workshop_seats": 52,
+     "program_share_pct": 72.2
+    },
+    {
+     "month": "2026-09-01",
+     "full_program_inr": 360000.0,
+     "trial_inr": 225000.0,
+     "workshop_inr": 187953.0,
+     "total_inr": 772953.0,
+     "target_inr": 850000.0,
+     "pct_of_target": 90.9,
+     "trial_signups": 5,
+     "full_signups": 2,
+     "workshop_seats": 47,
+     "program_share_pct": 75.7
+    },
+    {
+     "month": "2026-10-01",
+     "full_program_inr": 180000.0,
+     "trial_inr": 135000.0,
+     "workshop_inr": 115971.0,
+     "total_inr": 430971.0,
+     "target_inr": 900000.0,
+     "pct_of_target": 47.9,
+     "trial_signups": 3,
+     "full_signups": 1,
+     "workshop_seats": 29,
+     "program_share_pct": 73.1
+    }
+   ],
+   "unpaid": [
+    {
+     "invoice_id": "INV-0412",
+     "billed_to": "Parent of Aarav S.",
+     "product": "full",
+     "amount_inr": 180000.0,
+     "issued_on": "2026-07-28",
+     "due_on": "2026-08-04",
+     "days_overdue": 73,
+     "status": "critical"
+    },
+    {
+     "invoice_id": "INV-0447",
+     "billed_to": "Parent of Myra K.",
+     "product": "trial",
+     "amount_inr": 45000.0,
+     "issued_on": "2026-08-19",
+     "due_on": "2026-08-26",
+     "days_overdue": 51,
+     "status": "critical"
+    },
+    {
+     "invoice_id": "INV-0471",
+     "billed_to": "Parent of Kabir R.",
+     "product": "full",
+     "amount_inr": 180000.0,
+     "issued_on": "2026-09-08",
+     "due_on": "2026-09-15",
+     "days_overdue": 31,
+     "status": "critical"
+    },
+    {
+     "invoice_id": "INV-0483",
+     "billed_to": "Parent of Ira P.",
+     "product": "trial",
+     "amount_inr": 45000.0,
+     "issued_on": "2026-09-24",
+     "due_on": "2026-10-01",
+     "days_overdue": 15,
+     "status": "overdue"
+    },
+    {
+     "invoice_id": "INV-0496",
+     "billed_to": "Parent of Vihaan M.",
+     "product": "trial",
+     "amount_inr": 45000.0,
+     "issued_on": "2026-10-06",
+     "due_on": "2026-10-13",
+     "days_overdue": 3,
+     "status": "overdue"
+    },
+    {
+     "invoice_id": "INV-0502",
+     "billed_to": "Parent of Sara D.",
+     "product": "full",
+     "amount_inr": 180000.0,
+     "issued_on": "2026-10-13",
+     "due_on": "2026-10-20",
+     "days_overdue": 0,
+     "status": "not due"
+    }
+   ],
+   "funnel": [
+    {
+     "n": 1,
+     "stage": "Total leads",
+     "leads": 981,
+     "step_pct": null,
+     "of_all_leads_pct": 100.0
+    },
+    {
+     "n": 2,
+     "stage": "Qualified",
+     "leads": 306,
+     "step_pct": 31.2,
+     "of_all_leads_pct": 31.2
+    },
+    {
+     "n": 3,
+     "stage": "Discovery call set",
+     "leads": 171,
+     "step_pct": 55.9,
+     "of_all_leads_pct": 17.4
+    },
+    {
+     "n": 4,
+     "stage": "Showed up to call",
+     "leads": 127,
+     "step_pct": 74.3,
+     "of_all_leads_pct": 12.9
+    },
+    {
+     "n": 5,
+     "stage": "Ambition interview",
+     "leads": 94,
+     "step_pct": 74.0,
+     "of_all_leads_pct": 9.6
+    },
+    {
+     "n": 6,
+     "stage": "Architect session",
+     "leads": 54,
+     "step_pct": 57.4,
+     "of_all_leads_pct": 5.5
+    },
+    {
+     "n": 7,
+     "stage": "Paid sign-up",
+     "leads": 26,
+     "step_pct": 48.1,
+     "of_all_leads_pct": 2.7
+    }
+   ],
+   "funnel_kpis": [
+    {
+     "cost_per_qualified_lead_inr": 2255,
+     "program_conversion_pct": 2.65,
+     "organic_leads": 111,
+     "avg_days_to_pay": 16.2,
+     "avg_days_to_drop": 8.5
+    }
+   ],
+   "creatives": [
+    {
+     "name": "Reel: workshop highlights",
+     "objective": "workshop",
+     "spend_inr": 89100,
+     "ctr_pct": 1.98,
+     "frequency": 2.0,
+     "results": 125,
+     "cost_per_result": 713,
+     "target": 800,
+     "action": "scale"
+    },
+    {
+     "name": "Reel: \"What will you be at 25?\"",
+     "objective": "program",
+     "spend_inr": 207000,
+     "ctr_pct": 1.78,
+     "frequency": 2.2,
+     "results": 96,
+     "cost_per_result": 2156,
+     "target": 2500,
+     "action": "scale"
+    },
+    {
+     "name": "Carousel: a day as an Alcovian",
+     "objective": "program",
+     "spend_inr": 151800,
+     "ctr_pct": 1.38,
+     "frequency": 2.7,
+     "results": 73,
+     "cost_per_result": 2079,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Static: 3-month trial offer",
+     "objective": "program",
+     "spend_inr": 82800,
+     "ctr_pct": 1.08,
+     "frequency": 2.1,
+     "results": 23,
+     "cost_per_result": 3600,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Parent testimonial video",
+     "objective": "program",
+     "spend_inr": 138000,
+     "ctr_pct": 1.05,
+     "frequency": 3.6,
+     "results": 57,
+     "cost_per_result": 2421,
+     "target": 2500,
+     "action": "refresh"
+    },
+    {
+     "name": "Static: guest speaker poster",
+     "objective": "workshop",
+     "spend_inr": 72900,
+     "ctr_pct": 0.85,
+     "frequency": 3.4,
+     "results": 82,
+     "cost_per_result": 889,
+     "target": 800,
+     "action": "refresh"
+    },
+    {
+     "name": "Static: \"Top 1% students\" banner",
+     "objective": "program",
+     "spend_inr": 110400,
+     "ctr_pct": 0.68,
+     "frequency": 2.5,
+     "results": 18,
+     "cost_per_result": 6133,
+     "target": 2500,
+     "action": "drop"
+    }
+   ],
+   "pages": [
+    {
+     "page": "/workshop-signup",
+     "visits": 8920,
+     "drop_off_pct": 49.4,
+     "latest_mobile_load_s": 1.9,
+     "health": "healthy"
+    },
+    {
+     "page": "/career-program",
+     "visits": 6300,
+     "drop_off_pct": 60.6,
+     "latest_mobile_load_s": 2.3,
+     "health": "healthy"
+    },
+    {
+     "page": "/trial-offer",
+     "visits": 1790,
+     "drop_off_pct": 70.4,
+     "latest_mobile_load_s": 3.4,
+     "health": "slow"
+    }
+   ],
+   "drop_stages": [
+    {
+     "last_stage_reached": "lead",
+     "dropped": 641,
+     "avg_days_in_funnel": 6.6
+    },
+    {
+     "last_stage_reached": "qualified",
+     "dropped": 126,
+     "avg_days_in_funnel": 9.7
+    },
+    {
+     "last_stage_reached": "discovery_set",
+     "dropped": 37,
+     "avg_days_in_funnel": 12.6
+    },
+    {
+     "last_stage_reached": "ambition_done",
+     "dropped": 34,
+     "avg_days_in_funnel": 20.2
+    },
+    {
+     "last_stage_reached": "discovery_showed",
+     "dropped": 28,
+     "avg_days_in_funnel": 16.6
+    },
+    {
+     "last_stage_reached": "architect_done",
+     "dropped": 22,
+     "avg_days_in_funnel": 22.5
+    }
+   ]
+  },
+  "2-2": {
+   "from": "2026-07-01",
+   "to": "2026-07-31",
+   "revenue": [
+    {
+     "month": "2026-07-01",
+     "full_program_inr": 360000.0,
+     "trial_inr": 135000.0,
+     "workshop_inr": 151962.0,
+     "total_inr": 646962.0,
+     "target_inr": 650000.0,
+     "pct_of_target": 99.5,
+     "trial_signups": 3,
+     "full_signups": 2,
+     "workshop_seats": 38,
+     "program_share_pct": 76.5
+    }
+   ],
+   "unpaid": [
+    {
+     "invoice_id": "INV-0412",
+     "billed_to": "Parent of Aarav S.",
+     "product": "full",
+     "amount_inr": 180000.0,
+     "issued_on": "2026-07-28",
+     "due_on": "2026-08-04",
+     "days_overdue": 73,
+     "status": "critical"
+    }
+   ],
+   "funnel": [
+    {
+     "n": 1,
+     "stage": "Total leads",
+     "leads": 192,
+     "step_pct": null,
+     "of_all_leads_pct": 100.0
+    },
+    {
+     "n": 2,
+     "stage": "Qualified",
+     "leads": 60,
+     "step_pct": 31.3,
+     "of_all_leads_pct": 31.3
+    },
+    {
+     "n": 3,
+     "stage": "Discovery call set",
+     "leads": 34,
+     "step_pct": 56.7,
+     "of_all_leads_pct": 17.7
+    },
+    {
+     "n": 4,
+     "stage": "Showed up to call",
+     "leads": 25,
+     "step_pct": 73.5,
+     "of_all_leads_pct": 13.0
+    },
+    {
+     "n": 5,
+     "stage": "Ambition interview",
+     "leads": 18,
+     "step_pct": 72.0,
+     "of_all_leads_pct": 9.4
+    },
+    {
+     "n": 6,
+     "stage": "Architect session",
+     "leads": 11,
+     "step_pct": 61.1,
+     "of_all_leads_pct": 5.7
+    },
+    {
+     "n": 7,
+     "stage": "Paid sign-up",
+     "leads": 5,
+     "step_pct": 45.5,
+     "of_all_leads_pct": 2.6
+    }
+   ],
+   "funnel_kpis": [
+    {
+     "cost_per_qualified_lead_inr": 2333,
+     "program_conversion_pct": 2.6,
+     "organic_leads": 22,
+     "avg_days_to_pay": 19.0,
+     "avg_days_to_drop": 8.7
+    }
+   ],
+   "creatives": [
+    {
+     "name": "Reel: workshop highlights",
+     "objective": "workshop",
+     "spend_inr": 17050,
+     "ctr_pct": 2.0,
+     "frequency": 1.6,
+     "results": 24,
+     "cost_per_result": 710,
+     "target": 800,
+     "action": "scale"
+    },
+    {
+     "name": "Reel: \"What will you be at 25?\"",
+     "objective": "program",
+     "spend_inr": 42000,
+     "ctr_pct": 1.8,
+     "frequency": 1.7,
+     "results": 22,
+     "cost_per_result": 1909,
+     "target": 2500,
+     "action": "scale"
+    },
+    {
+     "name": "Carousel: a day as an Alcovian",
+     "objective": "program",
+     "spend_inr": 30800,
+     "ctr_pct": 1.4,
+     "frequency": 2.2,
+     "results": 12,
+     "cost_per_result": 2567,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Parent testimonial video",
+     "objective": "program",
+     "spend_inr": 28000,
+     "ctr_pct": 1.2,
+     "frequency": 2.7,
+     "results": 9,
+     "cost_per_result": 3111,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Static: 3-month trial offer",
+     "objective": "program",
+     "spend_inr": 16800,
+     "ctr_pct": 1.1,
+     "frequency": 1.6,
+     "results": 4,
+     "cost_per_result": 4200,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Static: guest speaker poster",
+     "objective": "workshop",
+     "spend_inr": 13950,
+     "ctr_pct": 0.9,
+     "frequency": 2.8,
+     "results": 14,
+     "cost_per_result": 996,
+     "target": 800,
+     "action": "refresh"
+    },
+    {
+     "name": "Static: \"Top 1% students\" banner",
+     "objective": "program",
+     "spend_inr": 22400,
+     "ctr_pct": 0.7,
+     "frequency": 2.0,
+     "results": 5,
+     "cost_per_result": 4480,
+     "target": 2500,
+     "action": "drop"
+    }
+   ],
+   "pages": [
+    {
+     "page": "/workshop-signup",
+     "visits": 1720,
+     "drop_off_pct": 49.5,
+     "latest_mobile_load_s": 1.7,
+     "health": "healthy"
+    },
+    {
+     "page": "/career-program",
+     "visits": 1240,
+     "drop_off_pct": 60.0,
+     "latest_mobile_load_s": 2.2,
+     "health": "healthy"
+    },
+    {
+     "page": "/trial-offer",
+     "visits": 350,
+     "drop_off_pct": 70.9,
+     "latest_mobile_load_s": 2.9,
+     "health": "high drop-off"
+    }
+   ],
+   "drop_stages": [
+    {
+     "last_stage_reached": "lead",
+     "dropped": 132,
+     "avg_days_in_funnel": 6.6
+    },
+    {
+     "last_stage_reached": "qualified",
+     "dropped": 26,
+     "avg_days_in_funnel": 10.0
+    },
+    {
+     "last_stage_reached": "discovery_set",
+     "dropped": 9,
+     "avg_days_in_funnel": 12.5
+    },
+    {
+     "last_stage_reached": "ambition_done",
+     "dropped": 7,
+     "avg_days_in_funnel": 19.1
+    },
+    {
+     "last_stage_reached": "discovery_showed",
+     "dropped": 7,
+     "avg_days_in_funnel": 15.2
+    },
+    {
+     "last_stage_reached": "architect_done",
+     "dropped": 6,
+     "avg_days_in_funnel": 23.7
+    }
+   ]
+  },
+  "2-3": {
+   "from": "2026-07-01",
+   "to": "2026-08-31",
+   "revenue": [
+    {
+     "month": "2026-07-01",
+     "full_program_inr": 360000.0,
+     "trial_inr": 135000.0,
+     "workshop_inr": 151962.0,
+     "total_inr": 646962.0,
+     "target_inr": 650000.0,
+     "pct_of_target": 99.5,
+     "trial_signups": 3,
+     "full_signups": 2,
+     "workshop_seats": 38,
+     "program_share_pct": 76.5
+    },
+    {
+     "month": "2026-08-01",
+     "full_program_inr": 360000.0,
+     "trial_inr": 180000.0,
+     "workshop_inr": 207948.0,
+     "total_inr": 747948.0,
+     "target_inr": 750000.0,
+     "pct_of_target": 99.7,
+     "trial_signups": 4,
+     "full_signups": 2,
+     "workshop_seats": 52,
+     "program_share_pct": 72.2
+    }
+   ],
+   "unpaid": [
+    {
+     "invoice_id": "INV-0412",
+     "billed_to": "Parent of Aarav S.",
+     "product": "full",
+     "amount_inr": 180000.0,
+     "issued_on": "2026-07-28",
+     "due_on": "2026-08-04",
+     "days_overdue": 73,
+     "status": "critical"
+    },
+    {
+     "invoice_id": "INV-0447",
+     "billed_to": "Parent of Myra K.",
+     "product": "trial",
+     "amount_inr": 45000.0,
+     "issued_on": "2026-08-19",
+     "due_on": "2026-08-26",
+     "days_overdue": 51,
+     "status": "critical"
+    }
+   ],
+   "funnel": [
+    {
+     "n": 1,
+     "stage": "Total leads",
+     "leads": 423,
+     "step_pct": null,
+     "of_all_leads_pct": 100.0
+    },
+    {
+     "n": 2,
+     "stage": "Qualified",
+     "leads": 132,
+     "step_pct": 31.2,
+     "of_all_leads_pct": 31.2
+    },
+    {
+     "n": 3,
+     "stage": "Discovery call set",
+     "leads": 74,
+     "step_pct": 56.1,
+     "of_all_leads_pct": 17.5
+    },
+    {
+     "n": 4,
+     "stage": "Showed up to call",
+     "leads": 56,
+     "step_pct": 75.7,
+     "of_all_leads_pct": 13.2
+    },
+    {
+     "n": 5,
+     "stage": "Ambition interview",
+     "leads": 41,
+     "step_pct": 73.2,
+     "of_all_leads_pct": 9.7
+    },
+    {
+     "n": 6,
+     "stage": "Architect session",
+     "leads": 24,
+     "step_pct": 58.5,
+     "of_all_leads_pct": 5.7
+    },
+    {
+     "n": 7,
+     "stage": "Paid sign-up",
+     "leads": 11,
+     "step_pct": 45.8,
+     "of_all_leads_pct": 2.6
+    }
+   ],
+   "funnel_kpis": [
+    {
+     "cost_per_qualified_lead_inr": 2273,
+     "program_conversion_pct": 2.6,
+     "organic_leads": 48,
+     "avg_days_to_pay": 17.3,
+     "avg_days_to_drop": 8.7
+    }
+   ],
+   "creatives": [
+    {
+     "name": "Reel: workshop highlights",
+     "objective": "workshop",
+     "spend_inr": 37950,
+     "ctr_pct": 2.0,
+     "frequency": 1.8,
+     "results": 52,
+     "cost_per_result": 730,
+     "target": 800,
+     "action": "scale"
+    },
+    {
+     "name": "Reel: \"What will you be at 25?\"",
+     "objective": "program",
+     "spend_inr": 90000,
+     "ctr_pct": 1.8,
+     "frequency": 1.9,
+     "results": 42,
+     "cost_per_result": 2143,
+     "target": 2500,
+     "action": "scale"
+    },
+    {
+     "name": "Carousel: a day as an Alcovian",
+     "objective": "program",
+     "spend_inr": 66000,
+     "ctr_pct": 1.4,
+     "frequency": 2.4,
+     "results": 31,
+     "cost_per_result": 2129,
+     "target": 2500,
+     "action": "scale"
+    },
+    {
+     "name": "Static: 3-month trial offer",
+     "objective": "program",
+     "spend_inr": 36000,
+     "ctr_pct": 1.1,
+     "frequency": 1.8,
+     "results": 9,
+     "cost_per_result": 4000,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Parent testimonial video",
+     "objective": "program",
+     "spend_inr": 60000,
+     "ctr_pct": 1.09,
+     "frequency": 3.1,
+     "results": 22,
+     "cost_per_result": 2727,
+     "target": 2500,
+     "action": "refresh"
+    },
+    {
+     "name": "Static: guest speaker poster",
+     "objective": "workshop",
+     "spend_inr": 31050,
+     "ctr_pct": 0.85,
+     "frequency": 3.0,
+     "results": 38,
+     "cost_per_result": 817,
+     "target": 800,
+     "action": "refresh"
+    },
+    {
+     "name": "Static: \"Top 1% students\" banner",
+     "objective": "program",
+     "spend_inr": 48000,
+     "ctr_pct": 0.7,
+     "frequency": 2.2,
+     "results": 11,
+     "cost_per_result": 4364,
+     "target": 2500,
+     "action": "drop"
+    }
+   ],
+   "pages": [
+    {
+     "page": "/workshop-signup",
+     "visits": 3820,
+     "drop_off_pct": 49.1,
+     "latest_mobile_load_s": 1.8,
+     "health": "healthy"
+    },
+    {
+     "page": "/career-program",
+     "visits": 2720,
+     "drop_off_pct": 60.1,
+     "latest_mobile_load_s": 2.2,
+     "health": "healthy"
+    },
+    {
+     "page": "/trial-offer",
+     "visits": 770,
+     "drop_off_pct": 70.6,
+     "latest_mobile_load_s": 3.1,
+     "health": "slow"
+    }
+   ],
+   "drop_stages": [
+    {
+     "last_stage_reached": "lead",
+     "dropped": 291,
+     "avg_days_in_funnel": 6.5
+    },
+    {
+     "last_stage_reached": "qualified",
+     "dropped": 58,
+     "avg_days_in_funnel": 10.0
+    },
+    {
+     "last_stage_reached": "discovery_set",
+     "dropped": 18,
+     "avg_days_in_funnel": 13.1
+    },
+    {
+     "last_stage_reached": "ambition_done",
+     "dropped": 17,
+     "avg_days_in_funnel": 20.1
+    },
+    {
+     "last_stage_reached": "discovery_showed",
+     "dropped": 15,
+     "avg_days_in_funnel": 16.1
+    },
+    {
+     "last_stage_reached": "architect_done",
+     "dropped": 13,
+     "avg_days_in_funnel": 22.0
+    }
+   ]
+  },
+  "2-4": {
+   "from": "2026-07-01",
+   "to": "2026-09-30",
+   "revenue": [
+    {
+     "month": "2026-07-01",
+     "full_program_inr": 360000.0,
+     "trial_inr": 135000.0,
+     "workshop_inr": 151962.0,
+     "total_inr": 646962.0,
+     "target_inr": 650000.0,
+     "pct_of_target": 99.5,
+     "trial_signups": 3,
+     "full_signups": 2,
+     "workshop_seats": 38,
+     "program_share_pct": 76.5
+    },
+    {
+     "month": "2026-08-01",
+     "full_program_inr": 360000.0,
+     "trial_inr": 180000.0,
+     "workshop_inr": 207948.0,
+     "total_inr": 747948.0,
+     "target_inr": 750000.0,
+     "pct_of_target": 99.7,
+     "trial_signups": 4,
+     "full_signups": 2,
+     "workshop_seats": 52,
+     "program_share_pct": 72.2
+    },
+    {
+     "month": "2026-09-01",
+     "full_program_inr": 360000.0,
+     "trial_inr": 225000.0,
+     "workshop_inr": 187953.0,
+     "total_inr": 772953.0,
+     "target_inr": 850000.0,
+     "pct_of_target": 90.9,
+     "trial_signups": 5,
+     "full_signups": 2,
+     "workshop_seats": 47,
+     "program_share_pct": 75.7
+    }
+   ],
+   "unpaid": [
+    {
+     "invoice_id": "INV-0412",
+     "billed_to": "Parent of Aarav S.",
+     "product": "full",
+     "amount_inr": 180000.0,
+     "issued_on": "2026-07-28",
+     "due_on": "2026-08-04",
+     "days_overdue": 73,
+     "status": "critical"
+    },
+    {
+     "invoice_id": "INV-0447",
+     "billed_to": "Parent of Myra K.",
+     "product": "trial",
+     "amount_inr": 45000.0,
+     "issued_on": "2026-08-19",
+     "due_on": "2026-08-26",
+     "days_overdue": 51,
+     "status": "critical"
+    },
+    {
+     "invoice_id": "INV-0471",
+     "billed_to": "Parent of Kabir R.",
+     "product": "full",
+     "amount_inr": 180000.0,
+     "issued_on": "2026-09-08",
+     "due_on": "2026-09-15",
+     "days_overdue": 31,
+     "status": "critical"
+    },
+    {
+     "invoice_id": "INV-0483",
+     "billed_to": "Parent of Ira P.",
+     "product": "trial",
+     "amount_inr": 45000.0,
+     "issued_on": "2026-09-24",
+     "due_on": "2026-10-01",
+     "days_overdue": 15,
+     "status": "overdue"
+    }
+   ],
+   "funnel": [
+    {
+     "n": 1,
+     "stage": "Total leads",
+     "leads": 671,
+     "step_pct": null,
+     "of_all_leads_pct": 100.0
+    },
+    {
+     "n": 2,
+     "stage": "Qualified",
+     "leads": 210,
+     "step_pct": 31.3,
+     "of_all_leads_pct": 31.3
+    },
+    {
+     "n": 3,
+     "stage": "Discovery call set",
+     "leads": 118,
+     "step_pct": 56.2,
+     "of_all_leads_pct": 17.6
+    },
+    {
+     "n": 4,
+     "stage": "Showed up to call",
+     "leads": 89,
+     "step_pct": 75.4,
+     "of_all_leads_pct": 13.3
+    },
+    {
+     "n": 5,
+     "stage": "Ambition interview",
+     "leads": 66,
+     "step_pct": 74.2,
+     "of_all_leads_pct": 9.8
+    },
+    {
+     "n": 6,
+     "stage": "Architect session",
+     "leads": 38,
+     "step_pct": 57.6,
+     "of_all_leads_pct": 5.7
+    },
+    {
+     "n": 7,
+     "stage": "Paid sign-up",
+     "leads": 18,
+     "step_pct": 47.4,
+     "of_all_leads_pct": 2.7
+    }
+   ],
+   "funnel_kpis": [
+    {
+     "cost_per_qualified_lead_inr": 2238,
+     "program_conversion_pct": 2.68,
+     "organic_leads": 76,
+     "avg_days_to_pay": 16.3,
+     "avg_days_to_drop": 8.6
+    }
+   ],
+   "creatives": [
+    {
+     "name": "Reel: workshop highlights",
+     "objective": "workshop",
+     "spend_inr": 59400,
+     "ctr_pct": 1.96,
+     "frequency": 1.9,
+     "results": 82,
+     "cost_per_result": 724,
+     "target": 800,
+     "action": "scale"
+    },
+    {
+     "name": "Reel: \"What will you be at 25?\"",
+     "objective": "program",
+     "spend_inr": 141000,
+     "ctr_pct": 1.76,
+     "frequency": 2.1,
+     "results": 70,
+     "cost_per_result": 2014,
+     "target": 2500,
+     "action": "scale"
+    },
+    {
+     "name": "Carousel: a day as an Alcovian",
+     "objective": "program",
+     "spend_inr": 103400,
+     "ctr_pct": 1.36,
+     "frequency": 2.6,
+     "results": 52,
+     "cost_per_result": 1988,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Static: 3-month trial offer",
+     "objective": "program",
+     "spend_inr": 56400,
+     "ctr_pct": 1.06,
+     "frequency": 2.0,
+     "results": 18,
+     "cost_per_result": 3133,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Parent testimonial video",
+     "objective": "program",
+     "spend_inr": 94000,
+     "ctr_pct": 1.02,
+     "frequency": 3.4,
+     "results": 31,
+     "cost_per_result": 3032,
+     "target": 2500,
+     "action": "refresh"
+    },
+    {
+     "name": "Static: guest speaker poster",
+     "objective": "workshop",
+     "spend_inr": 48600,
+     "ctr_pct": 0.83,
+     "frequency": 3.2,
+     "results": 55,
+     "cost_per_result": 884,
+     "target": 800,
+     "action": "refresh"
+    },
+    {
+     "name": "Static: \"Top 1% students\" banner",
+     "objective": "program",
+     "spend_inr": 75200,
+     "ctr_pct": 0.66,
+     "frequency": 2.4,
+     "results": 12,
+     "cost_per_result": 6267,
+     "target": 2500,
+     "action": "drop"
+    }
+   ],
+   "pages": [
+    {
+     "page": "/workshop-signup",
+     "visits": 5870,
+     "drop_off_pct": 49.8,
+     "latest_mobile_load_s": 1.8,
+     "health": "healthy"
+    },
+    {
+     "page": "/career-program",
+     "visits": 4280,
+     "drop_off_pct": 60.6,
+     "latest_mobile_load_s": 2.3,
+     "health": "healthy"
+    },
+    {
+     "page": "/trial-offer",
+     "visits": 1210,
+     "drop_off_pct": 71.4,
+     "latest_mobile_load_s": 3.3,
+     "health": "slow"
+    }
+   ],
+   "drop_stages": [
+    {
+     "last_stage_reached": "lead",
+     "dropped": 461,
+     "avg_days_in_funnel": 6.6
+    },
+    {
+     "last_stage_reached": "qualified",
+     "dropped": 92,
+     "avg_days_in_funnel": 9.9
+    },
+    {
+     "last_stage_reached": "discovery_set",
+     "dropped": 28,
+     "avg_days_in_funnel": 12.6
+    },
+    {
+     "last_stage_reached": "ambition_done",
+     "dropped": 27,
+     "avg_days_in_funnel": 20.3
+    },
+    {
+     "last_stage_reached": "discovery_showed",
+     "dropped": 22,
+     "avg_days_in_funnel": 16.3
+    },
+    {
+     "last_stage_reached": "architect_done",
+     "dropped": 17,
+     "avg_days_in_funnel": 22.3
+    }
+   ]
+  },
+  "2-5": {
+   "from": "2026-07-01",
+   "to": "2026-10-16",
+   "revenue": [
+    {
+     "month": "2026-07-01",
+     "full_program_inr": 360000.0,
+     "trial_inr": 135000.0,
+     "workshop_inr": 151962.0,
+     "total_inr": 646962.0,
+     "target_inr": 650000.0,
+     "pct_of_target": 99.5,
+     "trial_signups": 3,
+     "full_signups": 2,
+     "workshop_seats": 38,
+     "program_share_pct": 76.5
+    },
+    {
+     "month": "2026-08-01",
+     "full_program_inr": 360000.0,
+     "trial_inr": 180000.0,
+     "workshop_inr": 207948.0,
+     "total_inr": 747948.0,
+     "target_inr": 750000.0,
+     "pct_of_target": 99.7,
+     "trial_signups": 4,
+     "full_signups": 2,
+     "workshop_seats": 52,
+     "program_share_pct": 72.2
+    },
+    {
+     "month": "2026-09-01",
+     "full_program_inr": 360000.0,
+     "trial_inr": 225000.0,
+     "workshop_inr": 187953.0,
+     "total_inr": 772953.0,
+     "target_inr": 850000.0,
+     "pct_of_target": 90.9,
+     "trial_signups": 5,
+     "full_signups": 2,
+     "workshop_seats": 47,
+     "program_share_pct": 75.7
+    },
+    {
+     "month": "2026-10-01",
+     "full_program_inr": 180000.0,
+     "trial_inr": 135000.0,
+     "workshop_inr": 115971.0,
+     "total_inr": 430971.0,
+     "target_inr": 900000.0,
+     "pct_of_target": 47.9,
+     "trial_signups": 3,
+     "full_signups": 1,
+     "workshop_seats": 29,
+     "program_share_pct": 73.1
+    }
+   ],
+   "unpaid": [
+    {
+     "invoice_id": "INV-0412",
+     "billed_to": "Parent of Aarav S.",
+     "product": "full",
+     "amount_inr": 180000.0,
+     "issued_on": "2026-07-28",
+     "due_on": "2026-08-04",
+     "days_overdue": 73,
+     "status": "critical"
+    },
+    {
+     "invoice_id": "INV-0447",
+     "billed_to": "Parent of Myra K.",
+     "product": "trial",
+     "amount_inr": 45000.0,
+     "issued_on": "2026-08-19",
+     "due_on": "2026-08-26",
+     "days_overdue": 51,
+     "status": "critical"
+    },
+    {
+     "invoice_id": "INV-0471",
+     "billed_to": "Parent of Kabir R.",
+     "product": "full",
+     "amount_inr": 180000.0,
+     "issued_on": "2026-09-08",
+     "due_on": "2026-09-15",
+     "days_overdue": 31,
+     "status": "critical"
+    },
+    {
+     "invoice_id": "INV-0483",
+     "billed_to": "Parent of Ira P.",
+     "product": "trial",
+     "amount_inr": 45000.0,
+     "issued_on": "2026-09-24",
+     "due_on": "2026-10-01",
+     "days_overdue": 15,
+     "status": "overdue"
+    },
+    {
+     "invoice_id": "INV-0496",
+     "billed_to": "Parent of Vihaan M.",
+     "product": "trial",
+     "amount_inr": 45000.0,
+     "issued_on": "2026-10-06",
+     "due_on": "2026-10-13",
+     "days_overdue": 3,
+     "status": "overdue"
+    },
+    {
+     "invoice_id": "INV-0502",
+     "billed_to": "Parent of Sara D.",
+     "product": "full",
+     "amount_inr": 180000.0,
+     "issued_on": "2026-10-13",
+     "due_on": "2026-10-20",
+     "days_overdue": 0,
+     "status": "not due"
+    }
+   ],
+   "funnel": [
+    {
+     "n": 1,
+     "stage": "Total leads",
+     "leads": 806,
+     "step_pct": null,
+     "of_all_leads_pct": 100.0
+    },
+    {
+     "n": 2,
+     "stage": "Qualified",
+     "leads": 252,
+     "step_pct": 31.3,
+     "of_all_leads_pct": 31.3
+    },
+    {
+     "n": 3,
+     "stage": "Discovery call set",
+     "leads": 141,
+     "step_pct": 56.0,
+     "of_all_leads_pct": 17.5
+    },
+    {
+     "n": 4,
+     "stage": "Showed up to call",
+     "leads": 105,
+     "step_pct": 74.5,
+     "of_all_leads_pct": 13.0
+    },
+    {
+     "n": 5,
+     "stage": "Ambition interview",
+     "leads": 78,
+     "step_pct": 74.3,
+     "of_all_leads_pct": 9.7
+    },
+    {
+     "n": 6,
+     "stage": "Architect session",
+     "leads": 45,
+     "step_pct": 57.7,
+     "of_all_leads_pct": 5.6
+    },
+    {
+     "n": 7,
+     "stage": "Paid sign-up",
+     "leads": 22,
+     "step_pct": 48.9,
+     "of_all_leads_pct": 2.7
+    }
+   ],
+   "funnel_kpis": [
+    {
+     "cost_per_qualified_lead_inr": 2222,
+     "program_conversion_pct": 2.73,
+     "organic_leads": 91,
+     "avg_days_to_pay": 15.8,
+     "avg_days_to_drop": 8.5
+    }
+   ],
+   "creatives": [
+    {
+     "name": "Reel: workshop highlights",
+     "objective": "workshop",
+     "spend_inr": 71500,
+     "ctr_pct": 1.95,
+     "frequency": 2.0,
+     "results": 99,
+     "cost_per_result": 722,
+     "target": 800,
+     "action": "scale"
+    },
+    {
+     "name": "Reel: \"What will you be at 25?\"",
+     "objective": "program",
+     "spend_inr": 168000,
+     "ctr_pct": 1.75,
+     "frequency": 2.2,
+     "results": 82,
+     "cost_per_result": 2049,
+     "target": 2500,
+     "action": "scale"
+    },
+    {
+     "name": "Carousel: a day as an Alcovian",
+     "objective": "program",
+     "spend_inr": 123200,
+     "ctr_pct": 1.35,
+     "frequency": 2.7,
+     "results": 61,
+     "cost_per_result": 2020,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Static: 3-month trial offer",
+     "objective": "program",
+     "spend_inr": 67200,
+     "ctr_pct": 1.05,
+     "frequency": 2.1,
+     "results": 21,
+     "cost_per_result": 3200,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Parent testimonial video",
+     "objective": "program",
+     "spend_inr": 112000,
+     "ctr_pct": 0.99,
+     "frequency": 3.6,
+     "results": 42,
+     "cost_per_result": 2667,
+     "target": 2500,
+     "action": "refresh"
+    },
+    {
+     "name": "Static: guest speaker poster",
+     "objective": "workshop",
+     "spend_inr": 58500,
+     "ctr_pct": 0.81,
+     "frequency": 3.4,
+     "results": 67,
+     "cost_per_result": 873,
+     "target": 800,
+     "action": "refresh"
+    },
+    {
+     "name": "Static: \"Top 1% students\" banner",
+     "objective": "program",
+     "spend_inr": 89600,
+     "ctr_pct": 0.65,
+     "frequency": 2.5,
+     "results": 14,
+     "cost_per_result": 6400,
+     "target": 2500,
+     "action": "drop"
+    }
+   ],
+   "pages": [
+    {
+     "page": "/workshop-signup",
+     "visits": 7130,
+     "drop_off_pct": 49.8,
+     "latest_mobile_load_s": 1.9,
+     "health": "healthy"
+    },
+    {
+     "page": "/career-program",
+     "visits": 5140,
+     "drop_off_pct": 61.0,
+     "latest_mobile_load_s": 2.3,
+     "health": "healthy"
+    },
+    {
+     "page": "/trial-offer",
+     "visits": 1460,
+     "drop_off_pct": 71.9,
+     "latest_mobile_load_s": 3.4,
+     "health": "slow"
+    }
+   ],
+   "drop_stages": [
+    {
+     "last_stage_reached": "lead",
+     "dropped": 520,
+     "avg_days_in_funnel": 6.6
+    },
+    {
+     "last_stage_reached": "qualified",
+     "dropped": 102,
+     "avg_days_in_funnel": 9.7
+    },
+    {
+     "last_stage_reached": "discovery_set",
+     "dropped": 29,
+     "avg_days_in_funnel": 12.6
+    },
+    {
+     "last_stage_reached": "ambition_done",
+     "dropped": 27,
+     "avg_days_in_funnel": 20.3
+    },
+    {
+     "last_stage_reached": "discovery_showed",
+     "dropped": 22,
+     "avg_days_in_funnel": 16.3
+    },
+    {
+     "last_stage_reached": "architect_done",
+     "dropped": 17,
+     "avg_days_in_funnel": 22.3
+    }
+   ]
+  },
+  "3-3": {
+   "from": "2026-08-01",
+   "to": "2026-08-31",
+   "revenue": [
+    {
+     "month": "2026-08-01",
+     "full_program_inr": 360000.0,
+     "trial_inr": 180000.0,
+     "workshop_inr": 207948.0,
+     "total_inr": 747948.0,
+     "target_inr": 750000.0,
+     "pct_of_target": 99.7,
+     "trial_signups": 4,
+     "full_signups": 2,
+     "workshop_seats": 52,
+     "program_share_pct": 72.2
+    }
+   ],
+   "unpaid": [
+    {
+     "invoice_id": "INV-0447",
+     "billed_to": "Parent of Myra K.",
+     "product": "trial",
+     "amount_inr": 45000.0,
+     "issued_on": "2026-08-19",
+     "due_on": "2026-08-26",
+     "days_overdue": 51,
+     "status": "critical"
+    }
+   ],
+   "funnel": [
+    {
+     "n": 1,
+     "stage": "Total leads",
+     "leads": 231,
+     "step_pct": null,
+     "of_all_leads_pct": 100.0
+    },
+    {
+     "n": 2,
+     "stage": "Qualified",
+     "leads": 72,
+     "step_pct": 31.2,
+     "of_all_leads_pct": 31.2
+    },
+    {
+     "n": 3,
+     "stage": "Discovery call set",
+     "leads": 40,
+     "step_pct": 55.6,
+     "of_all_leads_pct": 17.3
+    },
+    {
+     "n": 4,
+     "stage": "Showed up to call",
+     "leads": 31,
+     "step_pct": 77.5,
+     "of_all_leads_pct": 13.4
+    },
+    {
+     "n": 5,
+     "stage": "Ambition interview",
+     "leads": 23,
+     "step_pct": 74.2,
+     "of_all_leads_pct": 10.0
+    },
+    {
+     "n": 6,
+     "stage": "Architect session",
+     "leads": 13,
+     "step_pct": 56.5,
+     "of_all_leads_pct": 5.6
+    },
+    {
+     "n": 7,
+     "stage": "Paid sign-up",
+     "leads": 6,
+     "step_pct": 46.2,
+     "of_all_leads_pct": 2.6
+    }
+   ],
+   "funnel_kpis": [
+    {
+     "cost_per_qualified_lead_inr": 2222,
+     "program_conversion_pct": 2.6,
+     "organic_leads": 26,
+     "avg_days_to_pay": 15.9,
+     "avg_days_to_drop": 8.7
+    }
+   ],
+   "creatives": [
+    {
+     "name": "Reel: workshop highlights",
+     "objective": "workshop",
+     "spend_inr": 20900,
+     "ctr_pct": 2.0,
+     "frequency": 1.8,
+     "results": 28,
+     "cost_per_result": 746,
+     "target": 800,
+     "action": "scale"
+    },
+    {
+     "name": "Reel: \"What will you be at 25?\"",
+     "objective": "program",
+     "spend_inr": 48000,
+     "ctr_pct": 1.8,
+     "frequency": 1.9,
+     "results": 20,
+     "cost_per_result": 2400,
+     "target": 2500,
+     "action": "scale"
+    },
+    {
+     "name": "Carousel: a day as an Alcovian",
+     "objective": "program",
+     "spend_inr": 35200,
+     "ctr_pct": 1.4,
+     "frequency": 2.4,
+     "results": 19,
+     "cost_per_result": 1853,
+     "target": 2500,
+     "action": "scale"
+    },
+    {
+     "name": "Static: 3-month trial offer",
+     "objective": "program",
+     "spend_inr": 19200,
+     "ctr_pct": 1.1,
+     "frequency": 1.8,
+     "results": 5,
+     "cost_per_result": 3840,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Parent testimonial video",
+     "objective": "program",
+     "spend_inr": 32000,
+     "ctr_pct": 1.0,
+     "frequency": 3.1,
+     "results": 13,
+     "cost_per_result": 2462,
+     "target": 2500,
+     "action": "refresh"
+    },
+    {
+     "name": "Static: guest speaker poster",
+     "objective": "workshop",
+     "spend_inr": 17100,
+     "ctr_pct": 0.8,
+     "frequency": 3.0,
+     "results": 24,
+     "cost_per_result": 713,
+     "target": 800,
+     "action": "refresh"
+    },
+    {
+     "name": "Static: \"Top 1% students\" banner",
+     "objective": "program",
+     "spend_inr": 25600,
+     "ctr_pct": 0.7,
+     "frequency": 2.2,
+     "results": 6,
+     "cost_per_result": 4267,
+     "target": 2500,
+     "action": "drop"
+    }
+   ],
+   "pages": [
+    {
+     "page": "/workshop-signup",
+     "visits": 2100,
+     "drop_off_pct": 48.7,
+     "latest_mobile_load_s": 1.8,
+     "health": "healthy"
+    },
+    {
+     "page": "/career-program",
+     "visits": 1480,
+     "drop_off_pct": 60.2,
+     "latest_mobile_load_s": 2.2,
+     "health": "healthy"
+    },
+    {
+     "page": "/trial-offer",
+     "visits": 420,
+     "drop_off_pct": 70.5,
+     "latest_mobile_load_s": 3.1,
+     "health": "slow"
+    }
+   ],
+   "drop_stages": [
+    {
+     "last_stage_reached": "lead",
+     "dropped": 159,
+     "avg_days_in_funnel": 6.5
+    },
+    {
+     "last_stage_reached": "qualified",
+     "dropped": 32,
+     "avg_days_in_funnel": 10.0
+    },
+    {
+     "last_stage_reached": "ambition_done",
+     "dropped": 10,
+     "avg_days_in_funnel": 20.8
+    },
+    {
+     "last_stage_reached": "discovery_set",
+     "dropped": 9,
+     "avg_days_in_funnel": 13.7
+    },
+    {
+     "last_stage_reached": "discovery_showed",
+     "dropped": 8,
+     "avg_days_in_funnel": 16.8
+    },
+    {
+     "last_stage_reached": "architect_done",
+     "dropped": 7,
+     "avg_days_in_funnel": 20.5
+    }
+   ]
+  },
+  "3-4": {
+   "from": "2026-08-01",
+   "to": "2026-09-30",
+   "revenue": [
+    {
+     "month": "2026-08-01",
+     "full_program_inr": 360000.0,
+     "trial_inr": 180000.0,
+     "workshop_inr": 207948.0,
+     "total_inr": 747948.0,
+     "target_inr": 750000.0,
+     "pct_of_target": 99.7,
+     "trial_signups": 4,
+     "full_signups": 2,
+     "workshop_seats": 52,
+     "program_share_pct": 72.2
+    },
+    {
+     "month": "2026-09-01",
+     "full_program_inr": 360000.0,
+     "trial_inr": 225000.0,
+     "workshop_inr": 187953.0,
+     "total_inr": 772953.0,
+     "target_inr": 850000.0,
+     "pct_of_target": 90.9,
+     "trial_signups": 5,
+     "full_signups": 2,
+     "workshop_seats": 47,
+     "program_share_pct": 75.7
+    }
+   ],
+   "unpaid": [
+    {
+     "invoice_id": "INV-0447",
+     "billed_to": "Parent of Myra K.",
+     "product": "trial",
+     "amount_inr": 45000.0,
+     "issued_on": "2026-08-19",
+     "due_on": "2026-08-26",
+     "days_overdue": 51,
+     "status": "critical"
+    },
+    {
+     "invoice_id": "INV-0471",
+     "billed_to": "Parent of Kabir R.",
+     "product": "full",
+     "amount_inr": 180000.0,
+     "issued_on": "2026-09-08",
+     "due_on": "2026-09-15",
+     "days_overdue": 31,
+     "status": "critical"
+    },
+    {
+     "invoice_id": "INV-0483",
+     "billed_to": "Parent of Ira P.",
+     "product": "trial",
+     "amount_inr": 45000.0,
+     "issued_on": "2026-09-24",
+     "due_on": "2026-10-01",
+     "days_overdue": 15,
+     "status": "overdue"
+    }
+   ],
+   "funnel": [
+    {
+     "n": 1,
+     "stage": "Total leads",
+     "leads": 479,
+     "step_pct": null,
+     "of_all_leads_pct": 100.0
+    },
+    {
+     "n": 2,
+     "stage": "Qualified",
+     "leads": 150,
+     "step_pct": 31.3,
+     "of_all_leads_pct": 31.3
+    },
+    {
+     "n": 3,
+     "stage": "Discovery call set",
+     "leads": 84,
+     "step_pct": 56.0,
+     "of_all_leads_pct": 17.5
+    },
+    {
+     "n": 4,
+     "stage": "Showed up to call",
+     "leads": 64,
+     "step_pct": 76.2,
+     "of_all_leads_pct": 13.4
+    },
+    {
+     "n": 5,
+     "stage": "Ambition interview",
+     "leads": 48,
+     "step_pct": 75.0,
+     "of_all_leads_pct": 10.0
+    },
+    {
+     "n": 6,
+     "stage": "Architect session",
+     "leads": 27,
+     "step_pct": 56.3,
+     "of_all_leads_pct": 5.6
+    },
+    {
+     "n": 7,
+     "stage": "Paid sign-up",
+     "leads": 13,
+     "step_pct": 48.1,
+     "of_all_leads_pct": 2.7
+    }
+   ],
+   "funnel_kpis": [
+    {
+     "cost_per_qualified_lead_inr": 2200,
+     "program_conversion_pct": 2.71,
+     "organic_leads": 54,
+     "avg_days_to_pay": 15.3,
+     "avg_days_to_drop": 8.6
+    }
+   ],
+   "creatives": [
+    {
+     "name": "Reel: workshop highlights",
+     "objective": "workshop",
+     "spend_inr": 42350,
+     "ctr_pct": 1.95,
+     "frequency": 1.9,
+     "results": 58,
+     "cost_per_result": 730,
+     "target": 800,
+     "action": "scale"
+    },
+    {
+     "name": "Reel: \"What will you be at 25?\"",
+     "objective": "program",
+     "spend_inr": 99000,
+     "ctr_pct": 1.75,
+     "frequency": 2.1,
+     "results": 48,
+     "cost_per_result": 2063,
+     "target": 2500,
+     "action": "scale"
+    },
+    {
+     "name": "Carousel: a day as an Alcovian",
+     "objective": "program",
+     "spend_inr": 72600,
+     "ctr_pct": 1.35,
+     "frequency": 2.6,
+     "results": 40,
+     "cost_per_result": 1815,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Static: 3-month trial offer",
+     "objective": "program",
+     "spend_inr": 39600,
+     "ctr_pct": 1.05,
+     "frequency": 2.0,
+     "results": 14,
+     "cost_per_result": 2829,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Parent testimonial video",
+     "objective": "program",
+     "spend_inr": 66000,
+     "ctr_pct": 0.95,
+     "frequency": 3.4,
+     "results": 22,
+     "cost_per_result": 3000,
+     "target": 2500,
+     "action": "refresh"
+    },
+    {
+     "name": "Static: guest speaker poster",
+     "objective": "workshop",
+     "spend_inr": 34650,
+     "ctr_pct": 0.8,
+     "frequency": 3.2,
+     "results": 41,
+     "cost_per_result": 845,
+     "target": 800,
+     "action": "refresh"
+    },
+    {
+     "name": "Static: \"Top 1% students\" banner",
+     "objective": "program",
+     "spend_inr": 52800,
+     "ctr_pct": 0.65,
+     "frequency": 2.4,
+     "results": 7,
+     "cost_per_result": 7543,
+     "target": 2500,
+     "action": "drop"
+    }
+   ],
+   "pages": [
+    {
+     "page": "/workshop-signup",
+     "visits": 4150,
+     "drop_off_pct": 50.0,
+     "latest_mobile_load_s": 1.8,
+     "health": "healthy"
+    },
+    {
+     "page": "/career-program",
+     "visits": 3040,
+     "drop_off_pct": 60.9,
+     "latest_mobile_load_s": 2.3,
+     "health": "healthy"
+    },
+    {
+     "page": "/trial-offer",
+     "visits": 860,
+     "drop_off_pct": 71.6,
+     "latest_mobile_load_s": 3.3,
+     "health": "slow"
+    }
+   ],
+   "drop_stages": [
+    {
+     "last_stage_reached": "lead",
+     "dropped": 329,
+     "avg_days_in_funnel": 6.6
+    },
+    {
+     "last_stage_reached": "qualified",
+     "dropped": 66,
+     "avg_days_in_funnel": 9.9
+    },
+    {
+     "last_stage_reached": "ambition_done",
+     "dropped": 20,
+     "avg_days_in_funnel": 20.7
+    },
+    {
+     "last_stage_reached": "discovery_set",
+     "dropped": 19,
+     "avg_days_in_funnel": 12.6
+    },
+    {
+     "last_stage_reached": "discovery_showed",
+     "dropped": 15,
+     "avg_days_in_funnel": 16.8
+    },
+    {
+     "last_stage_reached": "architect_done",
+     "dropped": 11,
+     "avg_days_in_funnel": 21.5
+    }
+   ]
+  },
+  "3-5": {
+   "from": "2026-08-01",
+   "to": "2026-10-16",
+   "revenue": [
+    {
+     "month": "2026-08-01",
+     "full_program_inr": 360000.0,
+     "trial_inr": 180000.0,
+     "workshop_inr": 207948.0,
+     "total_inr": 747948.0,
+     "target_inr": 750000.0,
+     "pct_of_target": 99.7,
+     "trial_signups": 4,
+     "full_signups": 2,
+     "workshop_seats": 52,
+     "program_share_pct": 72.2
+    },
+    {
+     "month": "2026-09-01",
+     "full_program_inr": 360000.0,
+     "trial_inr": 225000.0,
+     "workshop_inr": 187953.0,
+     "total_inr": 772953.0,
+     "target_inr": 850000.0,
+     "pct_of_target": 90.9,
+     "trial_signups": 5,
+     "full_signups": 2,
+     "workshop_seats": 47,
+     "program_share_pct": 75.7
+    },
+    {
+     "month": "2026-10-01",
+     "full_program_inr": 180000.0,
+     "trial_inr": 135000.0,
+     "workshop_inr": 115971.0,
+     "total_inr": 430971.0,
+     "target_inr": 900000.0,
+     "pct_of_target": 47.9,
+     "trial_signups": 3,
+     "full_signups": 1,
+     "workshop_seats": 29,
+     "program_share_pct": 73.1
+    }
+   ],
+   "unpaid": [
+    {
+     "invoice_id": "INV-0447",
+     "billed_to": "Parent of Myra K.",
+     "product": "trial",
+     "amount_inr": 45000.0,
+     "issued_on": "2026-08-19",
+     "due_on": "2026-08-26",
+     "days_overdue": 51,
+     "status": "critical"
+    },
+    {
+     "invoice_id": "INV-0471",
+     "billed_to": "Parent of Kabir R.",
+     "product": "full",
+     "amount_inr": 180000.0,
+     "issued_on": "2026-09-08",
+     "due_on": "2026-09-15",
+     "days_overdue": 31,
+     "status": "critical"
+    },
+    {
+     "invoice_id": "INV-0483",
+     "billed_to": "Parent of Ira P.",
+     "product": "trial",
+     "amount_inr": 45000.0,
+     "issued_on": "2026-09-24",
+     "due_on": "2026-10-01",
+     "days_overdue": 15,
+     "status": "overdue"
+    },
+    {
+     "invoice_id": "INV-0496",
+     "billed_to": "Parent of Vihaan M.",
+     "product": "trial",
+     "amount_inr": 45000.0,
+     "issued_on": "2026-10-06",
+     "due_on": "2026-10-13",
+     "days_overdue": 3,
+     "status": "overdue"
+    },
+    {
+     "invoice_id": "INV-0502",
+     "billed_to": "Parent of Sara D.",
+     "product": "full",
+     "amount_inr": 180000.0,
+     "issued_on": "2026-10-13",
+     "due_on": "2026-10-20",
+     "days_overdue": 0,
+     "status": "not due"
+    }
+   ],
+   "funnel": [
+    {
+     "n": 1,
+     "stage": "Total leads",
+     "leads": 614,
+     "step_pct": null,
+     "of_all_leads_pct": 100.0
+    },
+    {
+     "n": 2,
+     "stage": "Qualified",
+     "leads": 192,
+     "step_pct": 31.3,
+     "of_all_leads_pct": 31.3
+    },
+    {
+     "n": 3,
+     "stage": "Discovery call set",
+     "leads": 107,
+     "step_pct": 55.7,
+     "of_all_leads_pct": 17.4
+    },
+    {
+     "n": 4,
+     "stage": "Showed up to call",
+     "leads": 80,
+     "step_pct": 74.8,
+     "of_all_leads_pct": 13.0
+    },
+    {
+     "n": 5,
+     "stage": "Ambition interview",
+     "leads": 60,
+     "step_pct": 75.0,
+     "of_all_leads_pct": 9.8
+    },
+    {
+     "n": 6,
+     "stage": "Architect session",
+     "leads": 34,
+     "step_pct": 56.7,
+     "of_all_leads_pct": 5.5
+    },
+    {
+     "n": 7,
+     "stage": "Paid sign-up",
+     "leads": 17,
+     "step_pct": 50.0,
+     "of_all_leads_pct": 2.8
+    }
+   ],
+   "funnel_kpis": [
+    {
+     "cost_per_qualified_lead_inr": 2188,
+     "program_conversion_pct": 2.77,
+     "organic_leads": 69,
+     "avg_days_to_pay": 14.9,
+     "avg_days_to_drop": 8.4
+    }
+   ],
+   "creatives": [
+    {
+     "name": "Reel: workshop highlights",
+     "objective": "workshop",
+     "spend_inr": 54450,
+     "ctr_pct": 1.94,
+     "frequency": 2.0,
+     "results": 75,
+     "cost_per_result": 726,
+     "target": 800,
+     "action": "scale"
+    },
+    {
+     "name": "Reel: \"What will you be at 25?\"",
+     "objective": "program",
+     "spend_inr": 126000,
+     "ctr_pct": 1.74,
+     "frequency": 2.2,
+     "results": 60,
+     "cost_per_result": 2100,
+     "target": 2500,
+     "action": "scale"
+    },
+    {
+     "name": "Carousel: a day as an Alcovian",
+     "objective": "program",
+     "spend_inr": 92400,
+     "ctr_pct": 1.34,
+     "frequency": 2.7,
+     "results": 49,
+     "cost_per_result": 1886,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Static: 3-month trial offer",
+     "objective": "program",
+     "spend_inr": 50400,
+     "ctr_pct": 1.04,
+     "frequency": 2.1,
+     "results": 17,
+     "cost_per_result": 2965,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Parent testimonial video",
+     "objective": "program",
+     "spend_inr": 84000,
+     "ctr_pct": 0.92,
+     "frequency": 3.6,
+     "results": 33,
+     "cost_per_result": 2545,
+     "target": 2500,
+     "action": "refresh"
+    },
+    {
+     "name": "Static: guest speaker poster",
+     "objective": "workshop",
+     "spend_inr": 44550,
+     "ctr_pct": 0.78,
+     "frequency": 3.4,
+     "results": 53,
+     "cost_per_result": 841,
+     "target": 800,
+     "action": "refresh"
+    },
+    {
+     "name": "Static: \"Top 1% students\" banner",
+     "objective": "program",
+     "spend_inr": 67200,
+     "ctr_pct": 0.64,
+     "frequency": 2.5,
+     "results": 9,
+     "cost_per_result": 7467,
+     "target": 2500,
+     "action": "drop"
+    }
+   ],
+   "pages": [
+    {
+     "page": "/workshop-signup",
+     "visits": 5410,
+     "drop_off_pct": 49.9,
+     "latest_mobile_load_s": 1.9,
+     "health": "healthy"
+    },
+    {
+     "page": "/career-program",
+     "visits": 3900,
+     "drop_off_pct": 61.3,
+     "latest_mobile_load_s": 2.3,
+     "health": "healthy"
+    },
+    {
+     "page": "/trial-offer",
+     "visits": 1110,
+     "drop_off_pct": 72.3,
+     "latest_mobile_load_s": 3.4,
+     "health": "slow"
+    }
+   ],
+   "drop_stages": [
+    {
+     "last_stage_reached": "lead",
+     "dropped": 388,
+     "avg_days_in_funnel": 6.6
+    },
+    {
+     "last_stage_reached": "qualified",
+     "dropped": 76,
+     "avg_days_in_funnel": 9.6
+    },
+    {
+     "last_stage_reached": "ambition_done",
+     "dropped": 20,
+     "avg_days_in_funnel": 20.7
+    },
+    {
+     "last_stage_reached": "discovery_set",
+     "dropped": 20,
+     "avg_days_in_funnel": 12.6
+    },
+    {
+     "last_stage_reached": "discovery_showed",
+     "dropped": 15,
+     "avg_days_in_funnel": 16.8
+    },
+    {
+     "last_stage_reached": "architect_done",
+     "dropped": 11,
+     "avg_days_in_funnel": 21.5
+    }
+   ]
+  },
+  "4-4": {
+   "from": "2026-09-01",
+   "to": "2026-09-30",
+   "revenue": [
+    {
+     "month": "2026-09-01",
+     "full_program_inr": 360000.0,
+     "trial_inr": 225000.0,
+     "workshop_inr": 187953.0,
+     "total_inr": 772953.0,
+     "target_inr": 850000.0,
+     "pct_of_target": 90.9,
+     "trial_signups": 5,
+     "full_signups": 2,
+     "workshop_seats": 47,
+     "program_share_pct": 75.7
+    }
+   ],
+   "unpaid": [
+    {
+     "invoice_id": "INV-0471",
+     "billed_to": "Parent of Kabir R.",
+     "product": "full",
+     "amount_inr": 180000.0,
+     "issued_on": "2026-09-08",
+     "due_on": "2026-09-15",
+     "days_overdue": 31,
+     "status": "critical"
+    },
+    {
+     "invoice_id": "INV-0483",
+     "billed_to": "Parent of Ira P.",
+     "product": "trial",
+     "amount_inr": 45000.0,
+     "issued_on": "2026-09-24",
+     "due_on": "2026-10-01",
+     "days_overdue": 15,
+     "status": "overdue"
+    }
+   ],
+   "funnel": [
+    {
+     "n": 1,
+     "stage": "Total leads",
+     "leads": 248,
+     "step_pct": null,
+     "of_all_leads_pct": 100.0
+    },
+    {
+     "n": 2,
+     "stage": "Qualified",
+     "leads": 78,
+     "step_pct": 31.5,
+     "of_all_leads_pct": 31.5
+    },
+    {
+     "n": 3,
+     "stage": "Discovery call set",
+     "leads": 44,
+     "step_pct": 56.4,
+     "of_all_leads_pct": 17.7
+    },
+    {
+     "n": 4,
+     "stage": "Showed up to call",
+     "leads": 33,
+     "step_pct": 75.0,
+     "of_all_leads_pct": 13.3
+    },
+    {
+     "n": 5,
+     "stage": "Ambition interview",
+     "leads": 25,
+     "step_pct": 75.8,
+     "of_all_leads_pct": 10.1
+    },
+    {
+     "n": 6,
+     "stage": "Architect session",
+     "leads": 14,
+     "step_pct": 56.0,
+     "of_all_leads_pct": 5.6
+    },
+    {
+     "n": 7,
+     "stage": "Paid sign-up",
+     "leads": 7,
+     "step_pct": 50.0,
+     "of_all_leads_pct": 2.8
+    }
+   ],
+   "funnel_kpis": [
+    {
+     "cost_per_qualified_lead_inr": 2179,
+     "program_conversion_pct": 2.82,
+     "organic_leads": 28,
+     "avg_days_to_pay": 14.8,
+     "avg_days_to_drop": 8.5
+    }
+   ],
+   "creatives": [
+    {
+     "name": "Reel: workshop highlights",
+     "objective": "workshop",
+     "spend_inr": 21450,
+     "ctr_pct": 1.9,
+     "frequency": 1.9,
+     "results": 30,
+     "cost_per_result": 715,
+     "target": 800,
+     "action": "scale"
+    },
+    {
+     "name": "Reel: \"What will you be at 25?\"",
+     "objective": "program",
+     "spend_inr": 51000,
+     "ctr_pct": 1.7,
+     "frequency": 2.1,
+     "results": 28,
+     "cost_per_result": 1821,
+     "target": 2500,
+     "action": "scale"
+    },
+    {
+     "name": "Carousel: a day as an Alcovian",
+     "objective": "program",
+     "spend_inr": 37400,
+     "ctr_pct": 1.3,
+     "frequency": 2.6,
+     "results": 21,
+     "cost_per_result": 1781,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Static: 3-month trial offer",
+     "objective": "program",
+     "spend_inr": 20400,
+     "ctr_pct": 1.0,
+     "frequency": 2.0,
+     "results": 9,
+     "cost_per_result": 2267,
+     "target": 2500,
+     "action": "scale"
+    },
+    {
+     "name": "Parent testimonial video",
+     "objective": "program",
+     "spend_inr": 34000,
+     "ctr_pct": 0.9,
+     "frequency": 3.4,
+     "results": 9,
+     "cost_per_result": 3778,
+     "target": 2500,
+     "action": "refresh"
+    },
+    {
+     "name": "Static: guest speaker poster",
+     "objective": "workshop",
+     "spend_inr": 17550,
+     "ctr_pct": 0.8,
+     "frequency": 3.2,
+     "results": 17,
+     "cost_per_result": 1032,
+     "target": 800,
+     "action": "refresh"
+    },
+    {
+     "name": "Static: \"Top 1% students\" banner",
+     "objective": "program",
+     "spend_inr": 27200,
+     "ctr_pct": 0.6,
+     "frequency": 2.4,
+     "results": 1,
+     "cost_per_result": 27200,
+     "target": 2500,
+     "action": "drop"
+    }
+   ],
+   "pages": [
+    {
+     "page": "/workshop-signup",
+     "visits": 2050,
+     "drop_off_pct": 51.2,
+     "latest_mobile_load_s": 1.8,
+     "health": "healthy"
+    },
+    {
+     "page": "/career-program",
+     "visits": 1560,
+     "drop_off_pct": 61.5,
+     "latest_mobile_load_s": 2.3,
+     "health": "healthy"
+    },
+    {
+     "page": "/trial-offer",
+     "visits": 440,
+     "drop_off_pct": 72.7,
+     "latest_mobile_load_s": 3.3,
+     "health": "slow"
+    }
+   ],
+   "drop_stages": [
+    {
+     "last_stage_reached": "lead",
+     "dropped": 170,
+     "avg_days_in_funnel": 6.7
+    },
+    {
+     "last_stage_reached": "qualified",
+     "dropped": 34,
+     "avg_days_in_funnel": 9.7
+    },
+    {
+     "last_stage_reached": "ambition_done",
+     "dropped": 10,
+     "avg_days_in_funnel": 20.6
+    },
+    {
+     "last_stage_reached": "discovery_set",
+     "dropped": 10,
+     "avg_days_in_funnel": 11.6
+    },
+    {
+     "last_stage_reached": "discovery_showed",
+     "dropped": 7,
+     "avg_days_in_funnel": 16.8
+    },
+    {
+     "last_stage_reached": "architect_done",
+     "dropped": 4,
+     "avg_days_in_funnel": 23.3
+    }
+   ]
+  },
+  "4-5": {
+   "from": "2026-09-01",
+   "to": "2026-10-16",
+   "revenue": [
+    {
+     "month": "2026-09-01",
+     "full_program_inr": 360000.0,
+     "trial_inr": 225000.0,
+     "workshop_inr": 187953.0,
+     "total_inr": 772953.0,
+     "target_inr": 850000.0,
+     "pct_of_target": 90.9,
+     "trial_signups": 5,
+     "full_signups": 2,
+     "workshop_seats": 47,
+     "program_share_pct": 75.7
+    },
+    {
+     "month": "2026-10-01",
+     "full_program_inr": 180000.0,
+     "trial_inr": 135000.0,
+     "workshop_inr": 115971.0,
+     "total_inr": 430971.0,
+     "target_inr": 900000.0,
+     "pct_of_target": 47.9,
+     "trial_signups": 3,
+     "full_signups": 1,
+     "workshop_seats": 29,
+     "program_share_pct": 73.1
+    }
+   ],
+   "unpaid": [
+    {
+     "invoice_id": "INV-0471",
+     "billed_to": "Parent of Kabir R.",
+     "product": "full",
+     "amount_inr": 180000.0,
+     "issued_on": "2026-09-08",
+     "due_on": "2026-09-15",
+     "days_overdue": 31,
+     "status": "critical"
+    },
+    {
+     "invoice_id": "INV-0483",
+     "billed_to": "Parent of Ira P.",
+     "product": "trial",
+     "amount_inr": 45000.0,
+     "issued_on": "2026-09-24",
+     "due_on": "2026-10-01",
+     "days_overdue": 15,
+     "status": "overdue"
+    },
+    {
+     "invoice_id": "INV-0496",
+     "billed_to": "Parent of Vihaan M.",
+     "product": "trial",
+     "amount_inr": 45000.0,
+     "issued_on": "2026-10-06",
+     "due_on": "2026-10-13",
+     "days_overdue": 3,
+     "status": "overdue"
+    },
+    {
+     "invoice_id": "INV-0502",
+     "billed_to": "Parent of Sara D.",
+     "product": "full",
+     "amount_inr": 180000.0,
+     "issued_on": "2026-10-13",
+     "due_on": "2026-10-20",
+     "days_overdue": 0,
+     "status": "not due"
+    }
+   ],
+   "funnel": [
+    {
+     "n": 1,
+     "stage": "Total leads",
+     "leads": 383,
+     "step_pct": null,
+     "of_all_leads_pct": 100.0
+    },
+    {
+     "n": 2,
+     "stage": "Qualified",
+     "leads": 120,
+     "step_pct": 31.3,
+     "of_all_leads_pct": 31.3
+    },
+    {
+     "n": 3,
+     "stage": "Discovery call set",
+     "leads": 67,
+     "step_pct": 55.8,
+     "of_all_leads_pct": 17.5
+    },
+    {
+     "n": 4,
+     "stage": "Showed up to call",
+     "leads": 49,
+     "step_pct": 73.1,
+     "of_all_leads_pct": 12.8
+    },
+    {
+     "n": 5,
+     "stage": "Ambition interview",
+     "leads": 37,
+     "step_pct": 75.5,
+     "of_all_leads_pct": 9.7
+    },
+    {
+     "n": 6,
+     "stage": "Architect session",
+     "leads": 21,
+     "step_pct": 56.8,
+     "of_all_leads_pct": 5.5
+    },
+    {
+     "n": 7,
+     "stage": "Paid sign-up",
+     "leads": 11,
+     "step_pct": 52.4,
+     "of_all_leads_pct": 2.9
+    }
+   ],
+   "funnel_kpis": [
+    {
+     "cost_per_qualified_lead_inr": 2167,
+     "program_conversion_pct": 2.87,
+     "organic_leads": 43,
+     "avg_days_to_pay": 14.3,
+     "avg_days_to_drop": 8.1
+    }
+   ],
+   "creatives": [
+    {
+     "name": "Reel: workshop highlights",
+     "objective": "workshop",
+     "spend_inr": 33550,
+     "ctr_pct": 1.9,
+     "frequency": 2.0,
+     "results": 47,
+     "cost_per_result": 714,
+     "target": 800,
+     "action": "scale"
+    },
+    {
+     "name": "Reel: \"What will you be at 25?\"",
+     "objective": "program",
+     "spend_inr": 78000,
+     "ctr_pct": 1.7,
+     "frequency": 2.2,
+     "results": 40,
+     "cost_per_result": 1950,
+     "target": 2500,
+     "action": "scale"
+    },
+    {
+     "name": "Carousel: a day as an Alcovian",
+     "objective": "program",
+     "spend_inr": 57200,
+     "ctr_pct": 1.3,
+     "frequency": 2.7,
+     "results": 30,
+     "cost_per_result": 1907,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Static: 3-month trial offer",
+     "objective": "program",
+     "spend_inr": 31200,
+     "ctr_pct": 1.0,
+     "frequency": 2.1,
+     "results": 12,
+     "cost_per_result": 2600,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Parent testimonial video",
+     "objective": "program",
+     "spend_inr": 52000,
+     "ctr_pct": 0.87,
+     "frequency": 3.6,
+     "results": 20,
+     "cost_per_result": 2600,
+     "target": 2500,
+     "action": "refresh"
+    },
+    {
+     "name": "Static: guest speaker poster",
+     "objective": "workshop",
+     "spend_inr": 27450,
+     "ctr_pct": 0.76,
+     "frequency": 3.4,
+     "results": 29,
+     "cost_per_result": 947,
+     "target": 800,
+     "action": "refresh"
+    },
+    {
+     "name": "Static: \"Top 1% students\" banner",
+     "objective": "program",
+     "spend_inr": 41600,
+     "ctr_pct": 0.6,
+     "frequency": 2.5,
+     "results": 3,
+     "cost_per_result": 13867,
+     "target": 2500,
+     "action": "drop"
+    }
+   ],
+   "pages": [
+    {
+     "page": "/workshop-signup",
+     "visits": 3310,
+     "drop_off_pct": 50.6,
+     "latest_mobile_load_s": 1.9,
+     "health": "healthy"
+    },
+    {
+     "page": "/career-program",
+     "visits": 2420,
+     "drop_off_pct": 62.0,
+     "latest_mobile_load_s": 2.3,
+     "health": "healthy"
+    },
+    {
+     "page": "/trial-offer",
+     "visits": 690,
+     "drop_off_pct": 73.3,
+     "latest_mobile_load_s": 3.4,
+     "health": "slow"
+    }
+   ],
+   "drop_stages": [
+    {
+     "last_stage_reached": "lead",
+     "dropped": 229,
+     "avg_days_in_funnel": 6.7
+    },
+    {
+     "last_stage_reached": "qualified",
+     "dropped": 44,
+     "avg_days_in_funnel": 9.3
+    },
+    {
+     "last_stage_reached": "discovery_set",
+     "dropped": 11,
+     "avg_days_in_funnel": 11.7
+    },
+    {
+     "last_stage_reached": "ambition_done",
+     "dropped": 10,
+     "avg_days_in_funnel": 20.6
+    },
+    {
+     "last_stage_reached": "discovery_showed",
+     "dropped": 7,
+     "avg_days_in_funnel": 16.8
+    },
+    {
+     "last_stage_reached": "architect_done",
+     "dropped": 4,
+     "avg_days_in_funnel": 23.3
+    }
+   ]
+  },
+  "5-5": {
+   "from": "2026-10-01",
+   "to": "2026-10-16",
+   "revenue": [
+    {
+     "month": "2026-10-01",
+     "full_program_inr": 180000.0,
+     "trial_inr": 135000.0,
+     "workshop_inr": 115971.0,
+     "total_inr": 430971.0,
+     "target_inr": 900000.0,
+     "pct_of_target": 47.9,
+     "trial_signups": 3,
+     "full_signups": 1,
+     "workshop_seats": 29,
+     "program_share_pct": 73.1
+    }
+   ],
+   "unpaid": [
+    {
+     "invoice_id": "INV-0496",
+     "billed_to": "Parent of Vihaan M.",
+     "product": "trial",
+     "amount_inr": 45000.0,
+     "issued_on": "2026-10-06",
+     "due_on": "2026-10-13",
+     "days_overdue": 3,
+     "status": "overdue"
+    },
+    {
+     "invoice_id": "INV-0502",
+     "billed_to": "Parent of Sara D.",
+     "product": "full",
+     "amount_inr": 180000.0,
+     "issued_on": "2026-10-13",
+     "due_on": "2026-10-20",
+     "days_overdue": 0,
+     "status": "not due"
+    }
+   ],
+   "funnel": [
+    {
+     "n": 1,
+     "stage": "Total leads",
+     "leads": 135,
+     "step_pct": null,
+     "of_all_leads_pct": 100.0
+    },
+    {
+     "n": 2,
+     "stage": "Qualified",
+     "leads": 42,
+     "step_pct": 31.1,
+     "of_all_leads_pct": 31.1
+    },
+    {
+     "n": 3,
+     "stage": "Discovery call set",
+     "leads": 23,
+     "step_pct": 54.8,
+     "of_all_leads_pct": 17.0
+    },
+    {
+     "n": 4,
+     "stage": "Showed up to call",
+     "leads": 16,
+     "step_pct": 69.6,
+     "of_all_leads_pct": 11.9
+    },
+    {
+     "n": 5,
+     "stage": "Ambition interview",
+     "leads": 12,
+     "step_pct": 75.0,
+     "of_all_leads_pct": 8.9
+    },
+    {
+     "n": 6,
+     "stage": "Architect session",
+     "leads": 7,
+     "step_pct": 58.3,
+     "of_all_leads_pct": 5.2
+    },
+    {
+     "n": 7,
+     "stage": "Paid sign-up",
+     "leads": 4,
+     "step_pct": 57.1,
+     "of_all_leads_pct": 3.0
+    }
+   ],
+   "funnel_kpis": [
+    {
+     "cost_per_qualified_lead_inr": 2143,
+     "program_conversion_pct": 2.96,
+     "organic_leads": 15,
+     "avg_days_to_pay": 13.4,
+     "avg_days_to_drop": 6.9
+    }
+   ],
+   "creatives": [
+    {
+     "name": "Reel: workshop highlights",
+     "objective": "workshop",
+     "spend_inr": 12100,
+     "ctr_pct": 1.9,
+     "frequency": 2.0,
+     "results": 17,
+     "cost_per_result": 712,
+     "target": 800,
+     "action": "scale"
+    },
+    {
+     "name": "Reel: \"What will you be at 25?\"",
+     "objective": "program",
+     "spend_inr": 27000,
+     "ctr_pct": 1.7,
+     "frequency": 2.2,
+     "results": 12,
+     "cost_per_result": 2250,
+     "target": 2500,
+     "action": "scale"
+    },
+    {
+     "name": "Carousel: a day as an Alcovian",
+     "objective": "program",
+     "spend_inr": 19800,
+     "ctr_pct": 1.3,
+     "frequency": 2.7,
+     "results": 9,
+     "cost_per_result": 2200,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Static: 3-month trial offer",
+     "objective": "program",
+     "spend_inr": 10800,
+     "ctr_pct": 1.0,
+     "frequency": 2.1,
+     "results": 3,
+     "cost_per_result": 3600,
+     "target": 2500,
+     "action": "hold"
+    },
+    {
+     "name": "Parent testimonial video",
+     "objective": "program",
+     "spend_inr": 18000,
+     "ctr_pct": 0.8,
+     "frequency": 3.6,
+     "results": 11,
+     "cost_per_result": 1636,
+     "target": 2500,
+     "action": "refresh"
+    },
+    {
+     "name": "Static: guest speaker poster",
+     "objective": "workshop",
+     "spend_inr": 9900,
+     "ctr_pct": 0.7,
+     "frequency": 3.4,
+     "results": 12,
+     "cost_per_result": 825,
+     "target": 800,
+     "action": "refresh"
+    },
+    {
+     "name": "Static: \"Top 1% students\" banner",
+     "objective": "program",
+     "spend_inr": 14400,
+     "ctr_pct": 0.6,
+     "frequency": 2.5,
+     "results": 2,
+     "cost_per_result": 7200,
+     "target": 2500,
+     "action": "drop"
+    }
+   ],
+   "pages": [
+    {
+     "page": "/workshop-signup",
+     "visits": 1260,
+     "drop_off_pct": 49.5,
+     "latest_mobile_load_s": 1.9,
+     "health": "healthy"
+    },
+    {
+     "page": "/career-program",
+     "visits": 860,
+     "drop_off_pct": 62.8,
+     "latest_mobile_load_s": 2.3,
+     "health": "healthy"
+    },
+    {
+     "page": "/trial-offer",
+     "visits": 250,
+     "drop_off_pct": 74.4,
+     "latest_mobile_load_s": 3.4,
+     "health": "slow"
+    }
+   ],
+   "drop_stages": [
+    {
+     "last_stage_reached": "lead",
+     "dropped": 59,
+     "avg_days_in_funnel": 6.7
+    },
+    {
+     "last_stage_reached": "qualified",
+     "dropped": 10,
+     "avg_days_in_funnel": 7.7
+    },
+    {
+     "last_stage_reached": "discovery_set",
+     "dropped": 1,
+     "avg_days_in_funnel": 11.8
+    }
+   ]
+  }
+ },
+ "renewals": [
+  {
+   "name": "Anaya T.",
+   "end_on": "2026-10-20",
+   "days_left": 4,
+   "active_days_last_14": 5,
+   "engagement": "medium"
+  },
+  {
+   "name": "Reyansh B.",
+   "end_on": "2026-10-27",
+   "days_left": 11,
+   "active_days_last_14": 5,
+   "engagement": "medium"
+  },
+  {
+   "name": "Diya G.",
+   "end_on": "2026-11-03",
+   "days_left": 18,
+   "active_days_last_14": 5,
+   "engagement": "medium"
+  },
+  {
+   "name": "Arjun N.",
+   "end_on": "2026-11-10",
+   "days_left": 25,
+   "active_days_last_14": 0,
+   "engagement": "low"
+  },
+  {
+   "name": "Kiara V.",
+   "end_on": "2026-11-12",
+   "days_left": 27,
+   "active_days_last_14": 5,
+   "engagement": "medium"
+  }
+ ]
+}

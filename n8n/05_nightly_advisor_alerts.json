@@ -1,0 +1,185 @@
+{
+  "name": "05 · Raise student alerts and message advisors (daily 21:30)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "30 21 * * *"
+            }
+          ]
+        }
+      },
+      "id": "62a82fa3-a37b-55f1-befb-b3c174c8230e",
+      "name": "Schedule",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "WITH overdue AS (\n  SELECT student_id, 'task_overdue' AS kind, count(*) || ' tasks more than 3 days overdue' AS detail\n  FROM alcovia.tasks WHERE done_on IS NULL AND due_on < current_date - 3 GROUP BY student_id\n), behind AS (\n  SELECT sb.student_id, 'subject_behind' AS kind,\n         sb.name || ' ' || round(100.0 * count(DISTINCT cs.chapter_id) / sb.chapters_total) || '% done vs '\n           || round(100.0 * (current_date - date '2026-04-01') / 365) || '% expected' AS detail\n  FROM alcovia.subjects sb JOIN alcovia.chapters c USING (subject_id)\n  LEFT JOIN alcovia.chapter_stages cs ON cs.chapter_id = c.chapter_id AND cs.stage = 1\n  GROUP BY sb.student_id, sb.name, sb.chapters_total\n  HAVING 100.0 * (current_date - date '2026-04-01') / 365 - 100.0 * count(DISTINCT cs.chapter_id) / sb.chapters_total > 15\n), inactive AS (\n  SELECT s.student_id, 'inactive' AS kind, 'No app activity for ' || (current_date - max(u.day)) || ' days' AS detail\n  FROM alcovia.students s LEFT JOIN alcovia.app_usage_daily u USING (student_id)\n  GROUP BY s.student_id HAVING coalesce(current_date - max(u.day), 99) >= 7\n), candidates AS (SELECT * FROM overdue UNION ALL SELECT * FROM behind UNION ALL SELECT * FROM inactive)\nINSERT INTO alcovia.alerts (student_id, kind, detail, raised_at)\nSELECT c.student_id, c.kind, c.detail, now() FROM candidates c\nWHERE NOT EXISTS (SELECT 1 FROM alcovia.alerts a WHERE a.student_id = c.student_id AND a.kind = c.kind\n                  AND a.actioned_at IS NULL AND (a.kind <> 'subject_behind' OR a.detail LIKE split_part(c.detail, ' ', 1) || ' %'))\nRETURNING student_id, kind, detail",
+        "options": {}
+      },
+      "id": "1534af4a-4e36-569f-9fb0-c6d8a2142b3a",
+      "name": "Raise new alerts",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        240,
+        0
+      ],
+      "credentials": {
+        "postgres": {
+          "id": "alcovia-postgres",
+          "name": "Alcovia Postgres"
+        }
+      },
+      "notes": "Skips an alert that is already open for the same student and kind",
+      "notesInFlow": true
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT ad.advisor_id, ad.name AS advisor, ad.phone,\n       string_agg(s.name || ': ' || a.detail, E'\\n' ORDER BY s.name) AS lines, count(*) AS n\nFROM alcovia.alerts a JOIN alcovia.students s USING (student_id) JOIN alcovia.advisors ad USING (advisor_id)\nWHERE a.actioned_at IS NULL AND ad.phone IS NOT NULL\nGROUP BY ad.advisor_id, ad.name, ad.phone",
+        "options": {}
+      },
+      "id": "3f1940b3-9e8a-56a2-a43b-a817ae9b5161",
+      "name": "Open alerts by advisor",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        480,
+        0
+      ],
+      "credentials": {
+        "postgres": {
+          "id": "alcovia-postgres",
+          "name": "Alcovia Postgres"
+        }
+      },
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.facebook.com/v21.0/{{ $env.WHATSAPP_PHONE_NUMBER_ID }}/messages",
+        "options": {},
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ messaging_product: 'whatsapp', to: $json.phone, type: 'template', template: { name: 'advisor_daily_alerts', language: { code: 'en' }, components: [{ type: 'body', parameters: [{ type: 'text', text: $json.advisor }, { type: 'text', text: String($json.n) }, { type: 'text', text: $json.lines.slice(0, 900) }] }] } }) }}"
+      },
+      "id": "bedb8a04-64ab-547b-b288-5db7254d79a8",
+      "name": "WhatsApp advisor",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        720,
+        0
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "whatsapp",
+          "name": "WhatsApp Cloud API"
+        }
+      },
+      "notes": "Template 'advisor_daily_alerts' must be approved in WhatsApp Manager",
+      "notesInFlow": true
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO alcovia.outreach_log (kind, ref_id, channel, provider_ref) VALUES ('advisor_alert', $1, 'whatsapp', nullif($2, ''))",
+        "options": {
+          "queryReplacement": "={{ [$('Open alerts by advisor').item.json.advisor_id, $json.messages?.[0]?.id ?? ''] }}"
+        }
+      },
+      "id": "60e197c4-e4ad-54ce-a394-3c4d13372807",
+      "name": "Log message",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        960,
+        0
+      ],
+      "credentials": {
+        "postgres": {
+          "id": "alcovia-postgres",
+          "name": "Alcovia Postgres"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Schedule": {
+      "main": [
+        [
+          {
+            "node": "Raise new alerts",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Raise new alerts": {
+      "main": [
+        [
+          {
+            "node": "Open alerts by advisor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Open alerts by advisor": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp advisor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp advisor": {
+      "main": [
+        [
+          {
+            "node": "Log message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Asia/Kolkata",
+    "saveManualExecutions": true
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "tags": [
+    {
+      "name": "students"
+    },
+    {
+      "name": "alerts"
+    }
+  ]
+}

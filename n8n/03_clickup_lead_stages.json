@@ -1,0 +1,143 @@
+{
+  "name": "03 · ClickUp lead status → funnel timestamps",
+  "nodes": [
+    {
+      "parameters": {
+        "team": "={{ $env.CLICKUP_TEAM_ID }}",
+        "events": [
+          "taskCreated",
+          "taskStatusUpdated"
+        ],
+        "filters": {}
+      },
+      "id": "f2153552-de75-54cb-a951-1c8aeb5877b1",
+      "name": "ClickUp status changed",
+      "type": "n8n-nodes-base.clickUpTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "credentials": {
+        "clickUpApi": {
+          "id": "clickup",
+          "name": "ClickUp"
+        }
+      },
+      "notes": "Only tasks in the Leads list are processed",
+      "notesInFlow": true
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://api.clickup.com/api/v2/task/{{ $json.task_id }}",
+        "options": {},
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth"
+      },
+      "id": "eda1ee26-cdc1-5282-b491-68fc172ddb57",
+      "name": "Get task",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        240,
+        0
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "clickup-http",
+          "name": "ClickUp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// ClickUp statuses in the Leads list, in funnel order. Must match exactly (set up by the process designer).\nconst STAGE = {\n  'new lead': 'lead', 'qualified': 'qualified', 'discovery call set': 'discovery_set',\n  'discovery call done': 'discovery_showed', 'ambition interview done': 'ambition_done',\n  'architect session done': 'architect_done', 'paid': 'paid', 'lost': 'dropped',\n};\nconst t = $input.first().json;\nif (t.list?.id !== $env.CLICKUP_LEADS_LIST_ID) return [];\nconst field = name => (t.custom_fields || []).find(f => f.name === name)?.value ?? '';\nconst history = $('ClickUp status changed').first().json.history_items?.[0];\nconst before = history?.before?.status?.toLowerCase();\nreturn [{ json: {\n  lead_id: t.id,\n  source: field('Source') === 'Organic' ? 'organic' : 'meta',\n  creative_id: field('Meta ad id'),\n  parent_name: field('Parent name'), parent_phone: field('Parent phone'), teen_name: field('Teen name'),\n  stage: STAGE[t.status.status.toLowerCase()] || 'lead',\n  drop_stage: STAGE[before] && STAGE[before] !== 'dropped' && STAGE[before] !== 'paid' ? STAGE[before] : 'lead',\n  discovery_call_at: field('Discovery call time') ? new Date(Number(field('Discovery call time'))).toISOString() : '',\n}}];"
+      },
+      "id": "4133466f-b89b-5d37-9492-e66f8bb64431",
+      "name": "Map status to stage",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        480,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO alcovia.leads (lead_id, source, creative_id, parent_name, parent_phone, teen_name, created_at)\nVALUES ($1, $2, nullif($3, ''), nullif($4, ''), nullif($5, ''), nullif($6, ''), now())\nON CONFLICT (lead_id) DO UPDATE SET\n  qualified_at        = CASE WHEN $7 = 'qualified'        THEN coalesce(leads.qualified_at, now())        ELSE leads.qualified_at END,\n  discovery_set_at    = CASE WHEN $7 = 'discovery_set'    THEN coalesce(leads.discovery_set_at, now())    ELSE leads.discovery_set_at END,\n  discovery_call_at   = coalesce(nullif($9, '')::timestamptz, leads.discovery_call_at),\n  discovery_showed_at = CASE WHEN $7 = 'discovery_showed' THEN coalesce(leads.discovery_showed_at, now()) ELSE leads.discovery_showed_at END,\n  ambition_done_at    = CASE WHEN $7 = 'ambition_done'    THEN coalesce(leads.ambition_done_at, now())    ELSE leads.ambition_done_at END,\n  architect_done_at   = CASE WHEN $7 = 'architect_done'   THEN coalesce(leads.architect_done_at, now())   ELSE leads.architect_done_at END,\n  paid_at             = CASE WHEN $7 = 'paid'             THEN coalesce(leads.paid_at, now())             ELSE leads.paid_at END,\n  dropped_at          = CASE WHEN $7 = 'dropped'          THEN coalesce(leads.dropped_at, now())          ELSE leads.dropped_at END,\n  drop_stage          = CASE WHEN $7 = 'dropped'          THEN $8                                         ELSE leads.drop_stage END",
+        "options": {
+          "queryReplacement": "={{ [$json.lead_id, $json.source, $json.creative_id, $json.parent_name, $json.parent_phone, $json.teen_name, $json.stage, $json.drop_stage, $json.discovery_call_at] }}"
+        }
+      },
+      "id": "da3486de-993e-5666-8caa-9ed9e938a375",
+      "name": "Upsert lead stage",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        720,
+        0
+      ],
+      "credentials": {
+        "postgres": {
+          "id": "alcovia-postgres",
+          "name": "Alcovia Postgres"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "ClickUp status changed": {
+      "main": [
+        [
+          {
+            "node": "Get task",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get task": {
+      "main": [
+        [
+          {
+            "node": "Map status to stage",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Map status to stage": {
+      "main": [
+        [
+          {
+            "node": "Upsert lead stage",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Asia/Kolkata",
+    "saveManualExecutions": true
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "tags": [
+    {
+      "name": "gtm"
+    },
+    {
+      "name": "funnel"
+    }
+  ]
+}
