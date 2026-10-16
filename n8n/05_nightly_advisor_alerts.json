@@ -1,4 +1,5 @@
 {
+  "id": "alcoviaflow00005",
   "name": "05 · Raise student alerts and message advisors (daily 21:30)",
   "nodes": [
     {
@@ -24,7 +25,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "WITH overdue AS (\n  SELECT student_id, 'task_overdue' AS kind, count(*) || ' tasks more than 3 days overdue' AS detail\n  FROM alcovia.tasks WHERE done_on IS NULL AND due_on < current_date - 3 GROUP BY student_id\n), behind AS (\n  SELECT sb.student_id, 'subject_behind' AS kind,\n         sb.name || ' ' || round(100.0 * count(DISTINCT cs.chapter_id) / sb.chapters_total) || '% done vs '\n           || round(100.0 * (current_date - date '2026-04-01') / 365) || '% expected' AS detail\n  FROM alcovia.subjects sb JOIN alcovia.chapters c USING (subject_id)\n  LEFT JOIN alcovia.chapter_stages cs ON cs.chapter_id = c.chapter_id AND cs.stage = 1\n  GROUP BY sb.student_id, sb.name, sb.chapters_total\n  HAVING 100.0 * (current_date - date '2026-04-01') / 365 - 100.0 * count(DISTINCT cs.chapter_id) / sb.chapters_total > 15\n), inactive AS (\n  SELECT s.student_id, 'inactive' AS kind, 'No app activity for ' || (current_date - max(u.day)) || ' days' AS detail\n  FROM alcovia.students s LEFT JOIN alcovia.app_usage_daily u USING (student_id)\n  GROUP BY s.student_id HAVING coalesce(current_date - max(u.day), 99) >= 7\n), candidates AS (SELECT * FROM overdue UNION ALL SELECT * FROM behind UNION ALL SELECT * FROM inactive)\nINSERT INTO alcovia.alerts (student_id, kind, detail, raised_at)\nSELECT c.student_id, c.kind, c.detail, now() FROM candidates c\nWHERE NOT EXISTS (SELECT 1 FROM alcovia.alerts a WHERE a.student_id = c.student_id AND a.kind = c.kind\n                  AND a.actioned_at IS NULL AND (a.kind <> 'subject_behind' OR a.detail LIKE split_part(c.detail, ' ', 1) || ' %'))\nRETURNING student_id, kind, detail",
+        "query": "WITH overdue AS (\n  SELECT student_id, 'task_overdue' AS kind, count(*) || ' tasks more than 3 days overdue' AS detail\n  FROM alcovia.tasks WHERE done_on IS NULL AND due_on < current_date - 3 GROUP BY student_id\n), behind AS (\n  SELECT sb.student_id, 'subject_behind' AS kind,\n         sb.name || ' ' || round(100.0 * count(DISTINCT cs.chapter_id) / sb.chapters_total) || '% done vs '\n           || round(100.0 * (current_date - date '2026-04-01') / 365) || '% expected' AS detail\n  FROM alcovia.subjects sb JOIN alcovia.chapters c USING (subject_id)\n  LEFT JOIN alcovia.chapter_stages cs ON cs.chapter_id = c.chapter_id AND cs.stage = 1\n  GROUP BY sb.student_id, sb.name, sb.chapters_total\n  HAVING 100.0 * (current_date - date '2026-04-01') / 365 - 100.0 * count(DISTINCT cs.chapter_id) / sb.chapters_total > 15\n), inactive AS (\n  SELECT s.student_id, 'inactive' AS kind, 'No app activity for ' || (current_date - max(u.day)) || ' days' AS detail\n  FROM alcovia.students s LEFT JOIN alcovia.app_usage_daily u USING (student_id)\n  GROUP BY s.student_id HAVING coalesce(current_date - max(u.day), 99) >= 7\n), candidates AS (SELECT * FROM overdue UNION ALL SELECT * FROM behind UNION ALL SELECT * FROM inactive)\nINSERT INTO alcovia.alerts (student_id, kind, detail, raised_at)\nSELECT c.student_id, c.kind, c.detail, now() FROM candidates c\n-- skip if the same alert is still open, or was raised in the last 7 days (so a handled alert doesn't come back every night)\nWHERE NOT EXISTS (SELECT 1 FROM alcovia.alerts a WHERE a.student_id = c.student_id AND a.kind = c.kind\n                  AND (a.actioned_at IS NULL OR a.raised_at > now() - interval '7 days')\n                  AND (a.kind <> 'subject_behind' OR a.detail LIKE split_part(c.detail, ' ', 1) || ' %'))\nRETURNING student_id, kind, detail",
         "options": {}
       },
       "id": "1534af4a-4e36-569f-9fb0-c6d8a2142b3a",
@@ -41,7 +42,7 @@
           "name": "Alcovia Postgres"
         }
       },
-      "notes": "Skips an alert that is already open for the same student and kind",
+      "notes": "Skips an alert that is already open, or was raised in the last 7 days",
       "notesInFlow": true
     },
     {
@@ -116,6 +117,17 @@
           "name": "Alcovia Postgres"
         }
       }
+    },
+    {
+      "parameters": {},
+      "id": "5e319466-6157-5fb6-ac9b-043b31d717b6",
+      "name": "Run manually",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        200
+      ]
     }
   ],
   "connections": {
@@ -162,6 +174,17 @@
           }
         ]
       ]
+    },
+    "Run manually": {
+      "main": [
+        [
+          {
+            "node": "Raise new alerts",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "active": false,
@@ -173,13 +196,5 @@
   "pinData": {},
   "meta": {
     "templateCredsSetupCompleted": false
-  },
-  "tags": [
-    {
-      "name": "students"
-    },
-    {
-      "name": "alerts"
-    }
-  ]
+  }
 }

@@ -1,4 +1,5 @@
 {
+  "id": "alcoviaflow00004",
   "name": "04 · Smallest.ai reminder and renewal calls (every 15 min)",
   "nodes": [
     {
@@ -92,6 +93,17 @@
           "name": "Alcovia Postgres"
         }
       }
+    },
+    {
+      "parameters": {},
+      "id": "61968b91-6d44-5faf-af53-174ab9ebe509",
+      "name": "Run manually",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        200
+      ]
     }
   ],
   "connections": {
@@ -127,6 +139,17 @@
           }
         ]
       ]
+    },
+    "Run manually": {
+      "main": [
+        [
+          {
+            "node": "Calls due now",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "active": false,
@@ -138,16 +161,5 @@
   "pinData": {},
   "meta": {
     "templateCredsSetupCompleted": false
-  },
-  "tags": [
-    {
-      "name": "gtm"
-    },
-    {
-      "name": "funnel"
-    },
-    {
-      "name": "renewals"
-    }
-  ]
+  }
 }

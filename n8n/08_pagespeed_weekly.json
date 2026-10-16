@@ -1,4 +1,5 @@
 {
+  "id": "alcoviaflow00008",
   "name": "08 · Landing page mobile load time (Monday 07:00)",
   "nodes": [
     {
@@ -90,6 +91,17 @@
           "name": "Alcovia Postgres"
         }
       }
+    },
+    {
+      "parameters": {},
+      "id": "c7605321-e0fb-529b-a654-e56782ece2df",
+      "name": "Run manually",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        200
+      ]
     }
   ],
   "connections": {
@@ -125,6 +137,17 @@
           }
         ]
       ]
+    },
+    "Run manually": {
+      "main": [
+        [
+          {
+            "node": "Pages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "active": false,
@@ -136,13 +159,5 @@
   "pinData": {},
   "meta": {
     "templateCredsSetupCompleted": false
-  },
-  "tags": [
-    {
-      "name": "gtm"
-    },
-    {
-      "name": "landing-pages"
-    }
-  ]
+  }
 }

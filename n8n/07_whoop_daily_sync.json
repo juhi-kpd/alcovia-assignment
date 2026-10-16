@@ -1,4 +1,5 @@
 {
+  "id": "alcoviaflow00007",
   "name": "07 · WHOOP recovery and sleep → wearable_daily (daily 07:00)",
   "nodes": [
     {
@@ -156,6 +157,17 @@
           "name": "Alcovia Postgres"
         }
       }
+    },
+    {
+      "parameters": {},
+      "id": "2e075a0e-1deb-5d43-8b04-568dbb5cff1c",
+      "name": "Run manually",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        200
+      ]
     }
   ],
   "connections": {
@@ -213,6 +225,17 @@
           }
         ]
       ]
+    },
+    "Run manually": {
+      "main": [
+        [
+          {
+            "node": "Connected students",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "active": false,
@@ -224,13 +247,5 @@
   "pinData": {},
   "meta": {
     "templateCredsSetupCompleted": false
-  },
-  "tags": [
-    {
-      "name": "students"
-    },
-    {
-      "name": "wearables"
-    }
-  ]
+  }
 }

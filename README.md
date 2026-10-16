@@ -120,4 +120,10 @@ PGURI=postgresql://localhost/alcovia python3 scripts/check_n8n_sql.py           
 
 - Schema, seed and all 15 metric queries run on PostgreSQL 16.
 - Dashboards: opened in Chromium at desktop and phone width with no script errors; GTM numbers match the SQL output exactly (they are the SQL output).
-- n8n: JSON structure and node connections checked; the SQL in all 16 Postgres nodes prepares against the schema; the lead-stage upsert and nightly alert insert were run on seed data. The workflows were not imported into a live n8n instance, and the external calls (Meta, ClickUp, Smallest.ai, WhatsApp, WHOOP) need real credentials to test end to end.
+- n8n (1.90): all 8 workflows import cleanly and open in the editor (screenshots in [`docs/n8n-screenshots`](docs/n8n-screenshots)). The SQL in all 16 Postgres nodes prepares against the schema. Workflows 05 (nightly alerts) and 06 (parent summary) were run end to end against the seed database with WhatsApp replaced by a local mock: 05 raised alerts, sent one message per advisor and logged them, and a second run raised nothing new; 06 sent one summary per parent. The other flows need real Meta, ClickUp, Razorpay, Smallest.ai or WHOOP credentials to run end to end.
+
+## Try a workflow yourself
+
+1. Start n8n (`npx n8n` or n8n Cloud) and add a Postgres credential named **Alcovia Postgres** pointing at a database loaded with `db/schema.sql` and `db/seed.sql`.
+2. Workflows → Import from file → pick a file in `n8n/`.
+3. Click **Test workflow**. Scheduled flows have a **Run manually** trigger for this. For 05 and 06, set `advisors.phone` / `students.parent_phone` first, and point the WhatsApp node at a test endpoint such as webhook.site.

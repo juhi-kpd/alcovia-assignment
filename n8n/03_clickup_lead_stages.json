@@ -1,4 +1,5 @@
 {
+  "id": "alcoviaflow00003",
   "name": "03 · ClickUp lead status → funnel timestamps",
   "nodes": [
     {
@@ -131,13 +132,5 @@
   "pinData": {},
   "meta": {
     "templateCredsSetupCompleted": false
-  },
-  "tags": [
-    {
-      "name": "gtm"
-    },
-    {
-      "name": "funnel"
-    }
-  ]
+  }
 }

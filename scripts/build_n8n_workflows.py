@@ -49,13 +49,18 @@ def http(wf, name, method, url, x, y, creds=None, query=None, body=None, notes=N
     return node(wf, name, "n8n-nodes-base.httpRequest", 4.2, p, x, y, creds, notes)
 
 def write(fname, title, nodes, chain, tags):
+    # Scheduled flows also get a manual trigger, so anyone can click "Test workflow" without waiting for the schedule.
+    sched = next((b for a, b in chain if a == "Schedule"), None)
+    if sched:
+        nodes = nodes + [node(fname[:2], "Run manually", "n8n-nodes-base.manualTrigger", 1, {}, 0, 200)]
+        chain = chain + [("Run manually", sched)]
     conns = {}
     for a, b in chain:
         conns.setdefault(a, {"main": [[]]})["main"][0].append({"node": b, "type": "main", "index": 0})
-    wf = {"name": title, "nodes": nodes, "connections": conns, "active": False,
+    wf = {"id": "alcoviaflow000" + fname[:2], "name": title, "nodes": nodes, "connections": conns, "active": False,
           "settings": {"executionOrder": "v1", "timezone": "Asia/Kolkata", "saveManualExecutions": True},
-          "pinData": {}, "meta": {"templateCredsSetupCompleted": False},
-          "tags": [{"name": t} for t in tags]}
+          "pinData": {}, "meta": {"templateCredsSetupCompleted": False}}
+    # no tags: n8n's importer fails when several files carry the same tag name
     (OUT / fname).write_text(json.dumps(wf, indent=2, ensure_ascii=False) + "\n")
 
 # ------------------------------------------------------------------ 01 Razorpay → payments, invoices
@@ -241,9 +246,11 @@ write("05_nightly_advisor_alerts.json", "05 · Raise student alerts and message 
 ), candidates AS (SELECT * FROM overdue UNION ALL SELECT * FROM behind UNION ALL SELECT * FROM inactive)
 INSERT INTO alcovia.alerts (student_id, kind, detail, raised_at)
 SELECT c.student_id, c.kind, c.detail, now() FROM candidates c
+-- skip if the same alert is still open, or was raised in the last 7 days (so a handled alert doesn't come back every night)
 WHERE NOT EXISTS (SELECT 1 FROM alcovia.alerts a WHERE a.student_id = c.student_id AND a.kind = c.kind
-                  AND a.actioned_at IS NULL AND (a.kind <> 'subject_behind' OR a.detail LIKE split_part(c.detail, ' ', 1) || ' %'))
-RETURNING student_id, kind, detail""", None, 240, 0, "Skips an alert that is already open for the same student and kind"),
+                  AND (a.actioned_at IS NULL OR a.raised_at > now() - interval '7 days')
+                  AND (a.kind <> 'subject_behind' OR a.detail LIKE split_part(c.detail, ' ', 1) || ' %'))
+RETURNING student_id, kind, detail""", None, 240, 0, "Skips an alert that is already open, or was raised in the last 7 days"),
     pg(wf, "Open alerts by advisor", """SELECT ad.advisor_id, ad.name AS advisor, ad.phone,
        string_agg(s.name || ': ' || a.detail, E'\\n' ORDER BY s.name) AS lines, count(*) AS n
 FROM alcovia.alerts a JOIN alcovia.students s USING (student_id) JOIN alcovia.advisors ad USING (advisor_id)

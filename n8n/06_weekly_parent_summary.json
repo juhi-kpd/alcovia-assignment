@@ -1,4 +1,5 @@
 {
+  "id": "alcoviaflow00006",
   "name": "06 · Weekly parent summary on WhatsApp (Sunday 18:00)",
   "nodes": [
     {
@@ -103,6 +104,17 @@
           "name": "Alcovia Postgres"
         }
       }
+    },
+    {
+      "parameters": {},
+      "id": "7a96e598-ab0c-55d2-9597-fb11d9dd54f8",
+      "name": "Run manually",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        200
+      ]
     }
   ],
   "connections": {
@@ -149,6 +161,17 @@
           }
         ]
       ]
+    },
+    "Run manually": {
+      "main": [
+        [
+          {
+            "node": "Week per student",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "active": false,
@@ -160,13 +183,5 @@
   "pinData": {},
   "meta": {
     "templateCredsSetupCompleted": false
-  },
-  "tags": [
-    {
-      "name": "students"
-    },
-    {
-      "name": "parents"
-    }
-  ]
+  }
 }

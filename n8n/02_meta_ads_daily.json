@@ -1,4 +1,5 @@
 {
+  "id": "alcoviaflow00002",
   "name": "02 · Meta Ads insights → ad_daily (daily 06:00)",
   "nodes": [
     {
@@ -154,6 +155,17 @@
           "name": "Alcovia Postgres"
         }
       }
+    },
+    {
+      "parameters": {},
+      "id": "d6f14bf9-e6af-53bc-aa48-a91d32232612",
+      "name": "Run manually",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        200
+      ]
     }
   ],
   "connections": {
@@ -211,6 +223,17 @@
           }
         ]
       ]
+    },
+    "Run manually": {
+      "main": [
+        [
+          {
+            "node": "Get yesterday's ad insights",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "active": false,
@@ -222,13 +245,5 @@
   "pinData": {},
   "meta": {
     "templateCredsSetupCompleted": false
-  },
-  "tags": [
-    {
-      "name": "gtm"
-    },
-    {
-      "name": "campaigns"
-    }
-  ]
+  }
 }

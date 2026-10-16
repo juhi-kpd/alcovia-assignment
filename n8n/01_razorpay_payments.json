@@ -1,4 +1,5 @@
 {
+  "id": "alcoviaflow00001",
   "name": "01 · Razorpay → payments and invoices",
   "nodes": [
     {
@@ -125,13 +126,5 @@
   "pinData": {},
   "meta": {
     "templateCredsSetupCompleted": false
-  },
-  "tags": [
-    {
-      "name": "gtm"
-    },
-    {
-      "name": "revenue"
-    }
-  ]
+  }
 }
