@@ -4,9 +4,11 @@ One Postgres database behind two dashboards and eight n8n automations. Every num
 
 | | Link |
 | --- | --- |
-| Executive writeup | _add link_ |
-| GTM tracker (revenue, funnel, campaigns) | [`dashboards/gtm-tracker.html`](dashboards/gtm-tracker.html) · live: _add link_ |
-| Student tracker (cohort and per-student) | [`dashboards/student-tracker.html`](dashboards/student-tracker.html) · live: _add link_ |
+| Writeup (2 pages) | [`docs/writeup.pdf`](docs/writeup.pdf) |
+| Full plan with diagrams | [`docs/full-plan.pdf`](docs/full-plan.pdf) |
+| Sample PRD: daily focus loop | [`docs/prd-daily-focus-loop.md`](docs/prd-daily-focus-loop.md) |
+| GTM tracker (revenue, funnel, campaigns) | [live](https://juhi-kpd.github.io/alcovia-assignment/dashboards/gtm-tracker.html) · [`source`](dashboards/gtm-tracker.html) |
+| Student tracker (cohort and per-student) | [live](https://juhi-kpd.github.io/alcovia-assignment/dashboards/student-tracker.html) · [`source`](dashboards/student-tracker.html) |
 
 ## How the pieces fit
 
@@ -48,6 +50,7 @@ flowchart LR
 | `sql/students/` | 8 metric queries for the student tracker |
 | `n8n/` | 8 workflow exports (import in n8n: Workflows → Import from file) |
 | `dashboards/` | The two dashboards: single HTML files with the query output embedded |
+| `docs/` | Writeup, full plan and a sample PRD |
 | `scripts/` | Seed generator, dashboard export, n8n builder and checker |
 
 ## Metric definitions
